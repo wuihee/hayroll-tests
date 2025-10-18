@@ -27,6 +27,8 @@ for program in benchmark_metadata["programs"]:
     path = program["path"]
     tests = program["test_files"]
 
+    print(f"Processing '{name}'")
+
     os.chdir(Path("CBench") / path)
 
     program_result = {
