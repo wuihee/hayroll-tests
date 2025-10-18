@@ -1,0 +1,397 @@
+{
+  "programs": [
+    {
+      "name": "42-Kocaeli-Printf",
+      "path": "42-Kocaeli-Printf",
+      "test_files": [
+        "42-Kocaeli-Printf/tests/writenumber_test.c",
+        "42-Kocaeli-Printf/tests/writestring_test.c"
+      ]
+    },
+    {
+      "name": "CircularBuffer",
+      "path": "CircularBuffer",
+      "test_files": [
+        "CircularBuffer/tests/test.c"
+      ]
+    },
+    {
+      "name": "Graph-recogniser",
+      "path": "Graph-recogniser",
+      "test_files": [
+        "Graph-recogniser/tests/test-cuckoohash.c",
+        "Graph-recogniser/tests/test-openhash.c",
+        "Graph-recogniser/tests/test-unit.c"
+      ]
+    },
+    {
+      "name": "Megalania",
+      "path": "Megalania",
+      "test_files": [
+        "Megalania/tests/main.c",
+        "Megalania/tests/max_heap_test.c",
+        "Megalania/tests/packet_slab_undo_stack_test.c",
+        "Megalania/tests/substring_enumerator_test.c"
+      ]
+    },
+    {
+      "name": "NandC",
+      "path": "NandC",
+      "test_files": [
+        "NandC/tests/test.c"
+      ]
+    },
+    {
+      "name": "aes128-SIMD",
+      "path": "aes128-SIMD",
+      "test_files": [
+        "aes128-SIMD/tests/test.c"
+      ]
+    },
+    {
+      "name": "amp",
+      "path": "amp",
+      "test_files": [
+        "amp/tests/test.c"
+      ]
+    },
+    {
+      "name": "avalanche",
+      "path": "avalanche",
+      "test_files": [
+        "avalanche/tests/fnv_1a.c",
+        "avalanche/tests/matrix_test.c"
+      ]
+    },
+    {
+      "name": "bhshell",
+      "path": "bhshell",
+      "test_files": [
+        "bhshell/tests/test.c"
+      ]
+    },
+    {
+      "name": "bigint",
+      "path": "bigint",
+      "test_files": [
+        "bigint/tests/test1.c",
+        "bigint/tests/test2.c",
+        "bigint/tests/test3.c"
+      ]
+    },
+    {
+      "name": "bitset",
+      "path": "bitset",
+      "test_files": [
+        "bitset/tests/test_bitset.c"
+      ]
+    },
+    {
+      "name": "blt",
+      "path": "blt",
+      "test_files": [
+        "blt/tests/blt_test.c",
+        "blt/tests/cbt_bm.c"
+      ]
+    },
+    {
+      "name": "bostree",
+      "path": "bostree",
+      "test_files": [
+        "bostree/tests/remove_bug.c",
+        "bostree/tests/remove_bug_2.c",
+        "bostree/tests/sanity.c",
+        "bostree/tests/test_helpers.c",
+        "bostree/tests/timing.c"
+      ]
+    },
+    {
+      "name": "btree-map",
+      "path": "btree-map",
+      "test_files": [
+        "btree-map/tests/test.c"
+      ]
+    },
+    {
+      "name": "c-aces",
+      "path": "c-aces",
+      "test_files": [
+        "c-aces/tests/aces-internal-test.c",
+        "c-aces/tests/common-test.c",
+        "c-aces/tests/main-test.c",
+        "c-aces/tests/matrix-test.c",
+        "c-aces/tests/polynomial-test.c"
+      ]
+    },
+    {
+      "name": "c-string",
+      "path": "c-string",
+      "test_files": [
+        "c-string/tests/example.c",
+        "c-string/tests/test_string_t.c"
+      ]
+    },
+    {
+      "name": "cJSON",
+      "path": "cJSON",
+      "test_files": [
+        "cJSON/tests/example.c",
+        "cJSON/tests/main.c"
+      ]
+    },
+    {
+      "name": "carrays",
+      "path": "carrays",
+      "test_files": [
+        "carrays/tests/test.c"
+      ]
+    },
+    {
+      "name": "cfsm",
+      "path": "cfsm",
+      "test_files": [
+        "cfsm/tests/Unity-2.5.2/src/unity.c",
+        "cfsm/tests/test_c_fsm.c"
+      ]
+    },
+    {
+      "name": "chtrie",
+      "path": "chtrie",
+      "test_files": [
+        "chtrie/tests/test.c"
+      ]
+    },
+    {
+      "name": "clhash",
+      "path": "clhash",
+      "test_files": [
+        "clhash/tests/unit.c"
+      ]
+    },
+    {
+      "name": "clog",
+      "path": "clog",
+      "test_files": [
+        "clog/tests/clog_test_c.c"
+      ]
+    },
+    {
+      "name": "coroutine",
+      "path": "coroutine",
+      "test_files": [
+        "coroutine/tests/test.c"
+      ]
+    },
+    {
+      "name": "cset",
+      "path": "cset",
+      "test_files": [
+        "cset/tests/test.c"
+      ]
+    },
+    {
+      "name": "csyncmers",
+      "path": "csyncmers",
+      "test_files": [
+        "csyncmers/tests/benchmark.c",
+        "csyncmers/tests/test.c"
+      ]
+    },
+    {
+      "name": "dict",
+      "path": "dict",
+      "test_files": [
+        "dict/tests/test0.c",
+        "dict/tests/test1.c",
+        "dict/tests/test2.c",
+        "dict/tests/test3.c",
+        "dict/tests/test4.c",
+        "dict/tests/test5.c"
+      ]
+    },
+    {
+      "name": "emlang",
+      "path": "emlang",
+      "test_files": [
+        "emlang/tests/test.c"
+      ]
+    },
+    {
+      "name": "fft",
+      "path": "fft",
+      "test_files": [
+        "fft/tests/test.c"
+      ]
+    },
+    {
+      "name": "file2str",
+      "path": "file2str",
+      "test_files": [
+        "file2str/tests/CuTest.c",
+        "file2str/tests/test_file2str.c"
+      ]
+    },
+    {
+      "name": "fslib",
+      "path": "fslib",
+      "test_files": [
+        "fslib/tests/test.c"
+      ]
+    },
+    {
+      "name": "geofence",
+      "path": "geofence",
+      "test_files": [
+        "geofence/tests/test.c"
+      ]
+    },
+    {
+      "name": "gfc",
+      "path": "gfc",
+      "test_files": [
+        "gfc/tests/gfc_bench.c",
+        "gfc/tests/gfc_test.c"
+      ]
+    },
+    {
+      "name": "hydra",
+      "path": "hydra",
+      "test_files": [
+        "hydra/tests/test.c"
+      ]
+    },
+    {
+      "name": "inversion_list",
+      "path": "inversion_list",
+      "test_files": [
+        "inversion_list/tests/inversion-list/test-clone.c",
+        "inversion_list/tests/inversion-list/test-complement.c",
+        "inversion_list/tests/inversion-list/test-couple-iterator.c",
+        "inversion_list/tests/inversion-list/test-create-destroy-2.c",
+        "inversion_list/tests/inversion-list/test-create-destroy-3.c",
+        "inversion_list/tests/inversion-list/test-create-destroy-4.c",
+        "inversion_list/tests/inversion-list/test-difference.c",
+        "inversion_list/tests/inversion-list/test-equals.c",
+        "inversion_list/tests/inversion-list/test-getters.c",
+        "inversion_list/tests/inversion-list/test-intersection.c",
+        "inversion_list/tests/inversion-list/test-iterator.c",
+        "inversion_list/tests/inversion-list/test-member.c",
+        "inversion_list/tests/inversion-list/test-struct.c",
+        "inversion_list/tests/inversion-list/test-to-string.c",
+        "inversion_list/tests/inversion-list/test-union.c"
+      ]
+    },
+    {
+      "name": "jccc",
+      "path": "jccc",
+      "test_files": [
+        "jccc/tests/identtest.c",
+        "jccc/tests/lextest.c",
+        "jccc/tests/mathtest.c",
+        "jccc/tests/optest.c",
+        "jccc/tests/simplemain.c"
+      ]
+    },
+    {
+      "name": "kairoCompiler",
+      "path": "kairoCompiler",
+      "test_files": [
+        "kairoCompiler/tests/main.c",
+        "kairoCompiler/tests/test.c",
+        "kairoCompiler/tests/test2.c"
+      ]
+    },
+    {
+      "name": "lambda-calculus-eval",
+      "path": "lambda-calculus-eval",
+      "test_files": [
+        "lambda-calculus-eval/tests/test_common.c",
+        "lambda-calculus-eval/tests/test_config.c",
+        "lambda-calculus-eval/tests/test_io.c",
+        "lambda-calculus-eval/tests/test_parser.c",
+        "lambda-calculus-eval/tests/test_reducer.c",
+        "lambda-calculus-eval/tests/test_typechecker.c",
+        "lambda-calculus-eval/tests/tests.c"
+      ]
+    },
+    {
+      "name": "libpgn",
+      "path": "libpgn",
+      "test_files": [
+        "libpgn/tests/annotation.c",
+        "libpgn/tests/comments.c",
+        "libpgn/tests/coordinate.c",
+        "libpgn/tests/metadata.c",
+        "libpgn/tests/moves.c",
+        "libpgn/tests/pgn.c",
+        "libpgn/tests/score.c"
+      ]
+    },
+    {
+      "name": "libwecan",
+      "path": "libwecan",
+      "test_files": [
+        "libwecan/tests/src/tests.c"
+      ]
+    },
+    {
+      "name": "matrix_multiplication",
+      "path": "matrix_multiplication",
+      "test_files": [
+        "matrix_multiplication/tests/test_matrix.c"
+      ]
+    },
+    {
+      "name": "morton",
+      "path": "morton",
+      "test_files": [
+        "morton/tests/bench.c",
+        "morton/tests/test.c"
+      ]
+    },
+    {
+      "name": "simple_lang",
+      "path": "simple_lang",
+      "test_files": [
+        "simple_lang/tests/test_compiler.c",
+        "simple_lang/tests/test_lexer.c",
+        "simple_lang/tests/test_parser.c"
+      ]
+    },
+    {
+      "name": "ted",
+      "path": "ted",
+      "test_files": [
+        "ted/tests/runtests.c"
+      ]
+    },
+    {
+      "name": "ulidgen",
+      "path": "ulidgen",
+      "test_files": [
+        "ulidgen/tests/test.c"
+      ]
+    },
+    {
+      "name": "utf8",
+      "path": "utf8",
+      "test_files": [
+        "utf8/tests/test.c"
+      ]
+    },
+    {
+      "name": "vec",
+      "path": "vec",
+      "test_files": [
+        "vec/tests/test.c"
+      ]
+    },
+    {
+      "name": "worsp",
+      "path": "worsp",
+      "test_files": [
+        "worsp/tests/test.c"
+      ]
+    }
+  ]
+}
