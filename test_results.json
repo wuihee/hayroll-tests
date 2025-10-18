@@ -1,8 +1,8 @@
 {
     "results": {
         "total_tests": 100,
-        "tests_passed": 31,
-        "tests_failed": 69,
+        "passed": 31,
+        "failed": 69,
         "failed_at_make": 24,
         "failed_at_transpile": 0,
         "failed_at_build": 24,
@@ -233,7 +233,7 @@
                 {
                     "name": "tests/example.c",
                     "status": "failed",
-                    "error": "tests/example.c: In function \u2018main\u2019:\ntests/example.c:26:9: warning: implicit declaration of function \u2018parse_and_callback\u2019 [-Wimplicit-function-declaration]\n   26 |         parse_and_callback(root, \"prefix\");\n      |         ^~~~~~~~~~~~~~~~~~\n/usr/bin/ld: /tmp/ccCvJYRK.o: in function `main':\nexample.c:(.text+0x175): undefined reference to `parse_and_callback'\ncollect2: error: ld returned 1 exit status\n"
+                    "error": "tests/example.c: In function \u2018main\u2019:\ntests/example.c:26:9: warning: implicit declaration of function \u2018parse_and_callback\u2019 [-Wimplicit-function-declaration]\n   26 |         parse_and_callback(root, \"prefix\");\n      |         ^~~~~~~~~~~~~~~~~~\n/usr/bin/ld: /tmp/ccVkRNCO.o: in function `main':\nexample.c:(.text+0x175): undefined reference to `parse_and_callback'\ncollect2: error: ld returned 1 exit status\n"
                 }
             ]
         },
@@ -462,7 +462,7 @@
                 {
                     "name": "src/tests/all_tests.c",
                     "status": "failed",
-                    "error": "/usr/bin/ld: /tmp/ccrPeC7C.o: in function `RunAllTests':\nall_tests.c:(.text+0xd): undefined reference to `CuStringNew'\n/usr/bin/ld: all_tests.c:(.text+0x16): undefined reference to `CuSuiteNew'\n/usr/bin/ld: all_tests.c:(.text+0x24): undefined reference to `CardUtilSuite'\n/usr/bin/ld: all_tests.c:(.text+0x36): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x40): undefined reference to `HandUtilSuite'\n/usr/bin/ld: all_tests.c:(.text+0x52): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x5c): undefined reference to `BucketSuite'\n/usr/bin/ld: all_tests.c:(.text+0x6e): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x78): undefined reference to `DeckSuite'\n/usr/bin/ld: all_tests.c:(.text+0x8a): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x96): undefined reference to `CuSuiteRun'\n/usr/bin/ld: all_tests.c:(.text+0xa9): undefined reference to `CuSuiteSummary'\n/usr/bin/ld: all_tests.c:(.text+0xbc): undefined reference to `CuSuiteDetails'\ncollect2: error: ld returned 1 exit status\n"
+                    "error": "/usr/bin/ld: /tmp/ccFGJYZn.o: in function `RunAllTests':\nall_tests.c:(.text+0xd): undefined reference to `CuStringNew'\n/usr/bin/ld: all_tests.c:(.text+0x16): undefined reference to `CuSuiteNew'\n/usr/bin/ld: all_tests.c:(.text+0x24): undefined reference to `CardUtilSuite'\n/usr/bin/ld: all_tests.c:(.text+0x36): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x40): undefined reference to `HandUtilSuite'\n/usr/bin/ld: all_tests.c:(.text+0x52): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x5c): undefined reference to `BucketSuite'\n/usr/bin/ld: all_tests.c:(.text+0x6e): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x78): undefined reference to `DeckSuite'\n/usr/bin/ld: all_tests.c:(.text+0x8a): undefined reference to `CuSuiteAddSuite'\n/usr/bin/ld: all_tests.c:(.text+0x96): undefined reference to `CuSuiteRun'\n/usr/bin/ld: all_tests.c:(.text+0xa9): undefined reference to `CuSuiteSummary'\n/usr/bin/ld: all_tests.c:(.text+0xbc): undefined reference to `CuSuiteDetails'\ncollect2: error: ld returned 1 exit status\n"
                 }
             ]
         },
@@ -895,7 +895,7 @@
                 {
                     "name": "test/test.c",
                     "status": "failed",
-                    "error": "/usr/bin/ld: /tmp/ccb6Yunc.o: in function `main':\ntest.c:(.text+0x44): undefined reference to `run_parse_tests'\n/usr/bin/ld: test.c:(.text+0x57): undefined reference to `run_load_tests'\n/usr/bin/ld: test.c:(.text+0x6a): undefined reference to `run_get_tests'\n/usr/bin/ld: test.c:(.text+0x7d): undefined reference to `run_print_tests'\ncollect2: error: ld returned 1 exit status\n"
+                    "error": "/usr/bin/ld: /tmp/ccoSywuv.o: in function `main':\ntest.c:(.text+0x44): undefined reference to `run_parse_tests'\n/usr/bin/ld: test.c:(.text+0x57): undefined reference to `run_load_tests'\n/usr/bin/ld: test.c:(.text+0x6a): undefined reference to `run_get_tests'\n/usr/bin/ld: test.c:(.text+0x7d): undefined reference to `run_print_tests'\ncollect2: error: ld returned 1 exit status\n"
                 }
             ]
         },

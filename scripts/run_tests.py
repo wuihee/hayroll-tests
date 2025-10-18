@@ -105,8 +105,8 @@ except Exception as e:
 finally:
     # Overall stats
     total_tests = 0
-    tests_passed = 0
-    tests_failed = 0
+    passed = 0
+    failed = 0
 
     # Stages
     failed_at_make = 0
@@ -117,7 +117,7 @@ finally:
 
     for result in results:
         if result["status"] == "failed":
-            tests_failed += 1
+            failed += 1
             match result["stage_failed"]:
                 case "make":
                     failed_at_make += 1
@@ -130,7 +130,7 @@ finally:
                 case "test":
                     failed_at_test += 1
         else:
-            tests_passed += 1
+            passed += 1
         total_tests += 1
 
     with open("test_results.json", "w") as file:
@@ -138,8 +138,8 @@ finally:
             {
                 "results": {
                     "total_tests": total_tests,
-                    "tests_passed": tests_passed,
-                    "tests_failed": tests_failed,
+                    "passed": passed,
+                    "failed": failed,
                     "failed_at_make": failed_at_make,
                     "failed_at_transpile": failed_at_transpile,
                     "failed_at_build": failed_at_build,
