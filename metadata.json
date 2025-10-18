@@ -759,15 +759,6 @@
       ]
     },
     {
-      "name": "skp",
-      "path": "skp",
-      "test_files": [
-        "test/ut_test1.c",
-        "test/ut_test2.c",
-        "test/ut_test3.c"
-      ]
-    },
-    {
       "name": "SlothLang",
       "path": "SlothLang",
       "test_files": [
