@@ -1,0 +1,471 @@
+{
+    "42-Kocaeli-Printf": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/42-Kocaeli-Printf)\nerror[E0423]: expected function, found macro `write`\n   --> src/ft_printf.rs:242:12\n    |\n242 |     return write(1 as libc::c_int, &mut c, 1 as libc::c_int);\n    |            ^^^^^ not a function\n    |\nhelp: use `!` to invoke the macro\n    |\n242 |     return write!(1 as libc::c_int, &mut c, 1 as libc::c_int);\n    |                 +\nhelp: consider importing one of these items instead\n    |\n1   | use core::fmt::write;\n    |\n1   | use core::ptr::write;\n    |\n1   | use crate::src::ft_printf::libc::write;\n    |\n1   | use libc::write;\n    |\n      and 3 other candidates\n\nFor more information about this error, try `rustc --explain E0423`.\nerror: could not compile `c2rust_out` due to previous error\n"
+    },
+    "CircularBuffer": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "tests/test.c:1:10: fatal error: ../src/CircularBuffer.h: No such file or directory\n    1 | #include \"../src/CircularBuffer.h\"\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~\ncompilation terminated.\nmake: *** [makefile:32: tests/test.o] Error 1\n"
+    },
+    "Graph-recogniser": {
+        "status": "failed",
+        "failed_stage": "link",
+        "test_results": {
+            "tests/test-cuckoohash.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/test-openhash.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/test-unit.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /tmp/ccVPU6fZ.o: in function `main':\ntest-unit.c:(.text+0x2c): undefined reference to `test_openhash'\n/usr/bin/ld: test-unit.c:(.text+0x78): undefined reference to `test_cuckoohash'\ncollect2: error: ld returned 1 exit status\n"
+            }
+        }
+    },
+    "Megalania": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "error: could not find `Cargo.toml` in `/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/Megalania` or any parent directory\n"
+    },
+    "NandC": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "aes128-SIMD": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/aes128-SIMD)\nerror[E0412]: cannot find type `__m128i_u` in this scope\n   --> src/keys.rs:24:14\n    |\n24  |       pub __v: __m128i_u,\n    |                ^^^^^^^^^ help: a struct with a similar name exists: `__m128i`\n    |\n   ::: /home/wuihee/.rustup/toolchains/nightly-2022-08-08-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/x86/mod.rs:8:1\n    |\n8   | / types! {\n9   | |     /// 128-bit wide integer vector type, x86-specific\n10  | |     ///\n11  | |     /// This type is the same as the `__m128i` type defined by Intel,\n...   |\n329 | |     );\n330 | | }\n    | |_- similarly named struct `__m128i` defined here\n\nerror[E0412]: cannot find type `__m128i_u` in this scope\n   --> src/keys.rs:24:14\n    |\n24  |       pub __v: __m128i_u,\n    |                ^^^^^^^^^\n    |\n   ::: /home/wuihee/.rustup/toolchains/nightly-2022-08-08-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/x86/mod.rs:8:1\n    |\n8   | / types! {\n9   | |     /// 128-bit wide integer vector type, x86-specific\n10  | |     ///\n11  | |     /// This type is the same as the `__m128i` type defined by Intel,\n...   |\n329 | |     );\n330 | | }\n    | |_- similarly named struct `__m128i` defined here\n    |\nhelp: a struct with a similar name exists\n    |\n24  |     pub __v: __m128i,\n    |              ~~~~~~~\nhelp: you might be missing a type parameter\n    |\n23  | pub struct __loadu_si128<__m128i_u> {\n    |                         +++++++++++\n\nerror[E0412]: cannot find type `__m128i_u` in this scope\n   --> src/keys.rs:29:14\n    |\n29  |       pub __v: __m128i_u,\n    |                ^^^^^^^^^ help: a struct with a similar name exists: `__m128i`\n    |\n   ::: /home/wuihee/.rustup/toolchains/nightly-2022-08-08-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/x86/mod.rs:8:1\n    |\n8   | / types! {\n9   | |     /// 128-bit wide integer vector type, x86-specific\n10  | |     ///\n11  | |     /// This type is the same as the `__m128i` type defined by Intel,\n...   |\n329 | |     );\n330 | | }\n    | |_- similarly named struct `__m128i` defined here\n\nerror[E0412]: cannot find type `__m128i_u` in this scope\n   --> src/keys.rs:29:14\n    |\n29  |       pub __v: __m128i_u,\n    |                ^^^^^^^^^\n    |\n   ::: /home/wuihee/.rustup/toolchains/nightly-2022-08-08-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/x86/mod.rs:8:1\n    |\n8   | / types! {\n9   | |     /// 128-bit wide integer vector type, x86-specific\n10  | |     ///\n11  | |     /// This type is the same as the `__m128i` type defined by Intel,\n...   |\n329 | |     );\n330 | | }\n    | |_- similarly named struct `__m128i` defined here\n    |\nhelp: a struct with a similar name exists\n    |\n29  |     pub __v: __m128i,\n    |              ~~~~~~~\nhelp: you might be missing a type parameter\n    |\n28  | pub struct __storeu_si128<__m128i_u> {\n    |                          +++++++++++\n\nerror[E0425]: cannot find function `_mm_malloc` in this scope\n  --> src/padding.rs:35:40\n   |\n35 |     let mut paddedData: *mut uint8_t = _mm_malloc(paddedLen, 16 as libc::c_int as size_t)\n   |                                        ^^^^^^^^^^ not found in this scope\n\nerror[E0425]: cannot find function `_mm_malloc` in this scope\n   --> tests/test.rs:128:43\n    |\n128 |     let mut decryptedData: *mut uint8_t = _mm_malloc(\n    |                                           ^^^^^^^^^^ not found in this scope\n\nerror[E0425]: cannot find function `_mm_free` in this scope\n   --> tests/test.rs:199:5\n    |\n199 |     _mm_free(paddedData as *mut libc::c_void);\n    |     ^^^^^^^^ not found in this scope\n\nwarning: unused import: `::libc`\n --> src/aes.rs:1:5\n  |\n1 | use ::libc;\n  |     ^^^^^^\n  |\n  = note: `#[warn(unused_imports)]` on by default\n\nwarning: unused import: `::libc`\n --> src/cipher_utils.rs:1:5\n  |\n1 | use ::libc;\n  |     ^^^^^^\n\nwarning: unused import: `::libc`\n --> src/matrix.rs:1:5\n  |\n1 | use ::libc;\n  |     ^^^^^^\n\nwarning: unused label\n   --> tests/test.rs:179:5\n    |\n179 |     'c_87841: {\n    |     ^^^^^^^^\n    |\n    = note: `#[warn(unused_labels)]` on by default\n\nSome errors have detailed explanations: E0412, E0425.\nFor more information about an error, try `rustc --explain E0412`.\nwarning: `c2rust_out` (lib) generated 4 warnings\nerror: could not compile `c2rust_out` due to 7 previous errors; 4 warnings emitted\n"
+    },
+    "amp": {
+        "status": "failed",
+        "failed_stage": "test",
+        "test_results": {
+            "tests/test.c": {
+                "status": "failed",
+                "stdout": "",
+                "stderr": "test_exe: tests/test.c:25: main: Assertion `0 == strcmp(\"some\", arg)' failed.\nAborted (core dumped)\n"
+            }
+        }
+    },
+    "avalanche": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "make: *** No rule to make target 'src/matrix_test.c', needed by 'matrix_test.o'.  Stop.\n"
+    },
+    "bhshell": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "bigint": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/bigint)\nwarning: unused variable: `tmp2`\n   --> src/bigint.rs:656:13\n    |\n656 |     let mut tmp2: bigint = bigint {\n    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_tmp2`\n    |\n    = note: `#[warn(unused_variables)]` on by default\n\nwarning: unused variable: `tmp2`\n   --> tests/test1.rs:656:13\n    |\n656 |     let mut tmp2: bigint = bigint {\n    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_tmp2`\n\nwarning: unused variable: `tmp2`\n   --> tests/test2.rs:656:13\n    |\n656 |     let mut tmp2: bigint = bigint {\n    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_tmp2`\n\nwarning: unused variable: `tmp2`\n   --> tests/test3.rs:656:13\n    |\n656 |     let mut tmp2: bigint = bigint {\n    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_tmp2`\n\nwarning: path statement with no effect\n  --> src/bigint.rs:78:9\n   |\n78 |         leading_zeros;\n   |         ^^^^^^^^^^^^^^\n   |\n   = note: `#[warn(path_statements)]` on by default\n\nwarning: path statement with no effect\n  --> src/bigint.rs:80:9\n   |\n80 |         i;\n   |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:134:9\n    |\n134 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:147:9\n    |\n147 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:164:9\n    |\n164 |         n;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:180:9\n    |\n180 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:231:9\n    |\n231 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:253:9\n    |\n253 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:273:9\n    |\n273 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:416:9\n    |\n416 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:477:9\n    |\n477 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:497:13\n    |\n497 |             i_0;\n    |             ^^^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:552:9\n    |\n552 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:579:13\n    |\n579 |             j;\n    |             ^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:582:9\n    |\n582 |         i_0;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:601:9\n    |\n601 |         i_1;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> src/bigint.rs:621:13\n    |\n621 |             i_2;\n    |             ^^^^\n\nwarning: path statement with no effect\n    --> src/bigint.rs:1022:9\n     |\n1022 |         i;\n     |         ^^\n\nwarning: path statement with no effect\n  --> tests/test1.rs:78:9\n   |\n78 |         leading_zeros;\n   |         ^^^^^^^^^^^^^^\n\nwarning: path statement with no effect\n  --> tests/test1.rs:80:9\n   |\n80 |         i;\n   |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:134:9\n    |\n134 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:147:9\n    |\n147 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:164:9\n    |\n164 |         n;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:180:9\n    |\n180 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:231:9\n    |\n231 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:253:9\n    |\n253 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:273:9\n    |\n273 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:416:9\n    |\n416 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:477:9\n    |\n477 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:497:13\n    |\n497 |             i_0;\n    |             ^^^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:552:9\n    |\n552 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:579:13\n    |\n579 |             j;\n    |             ^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:582:9\n    |\n582 |         i_0;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:601:9\n    |\n601 |         i_1;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/test1.rs:621:13\n    |\n621 |             i_2;\n    |             ^^^^\n\nwarning: path statement with no effect\n    --> tests/test1.rs:1022:9\n     |\n1022 |         i;\n     |         ^^\n\nwarning: path statement with no effect\n  --> tests/test2.rs:78:9\n   |\n78 |         leading_zeros;\n   |         ^^^^^^^^^^^^^^\n\nwarning: path statement with no effect\n  --> tests/test2.rs:80:9\n   |\n80 |         i;\n   |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:134:9\n    |\n134 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:147:9\n    |\n147 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:164:9\n    |\n164 |         n;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:180:9\n    |\n180 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:231:9\n    |\n231 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:253:9\n    |\n253 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:273:9\n    |\n273 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:416:9\n    |\n416 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:477:9\n    |\n477 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:497:13\n    |\n497 |             i_0;\n    |             ^^^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:552:9\n    |\n552 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:579:13\n    |\n579 |             j;\n    |             ^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:582:9\n    |\n582 |         i_0;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:601:9\n    |\n601 |         i_1;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/test2.rs:621:13\n    |\n621 |             i_2;\n    |             ^^^^\n\nwarning: path statement with no effect\n    --> tests/test2.rs:1022:9\n     |\n1022 |         i;\n     |         ^^\n\nwarning: path statement with no effect\n  --> tests/test3.rs:78:9\n   |\n78 |         leading_zeros;\n   |         ^^^^^^^^^^^^^^\n\nwarning: path statement with no effect\n  --> tests/test3.rs:80:9\n   |\n80 |         i;\n   |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:134:9\n    |\n134 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:147:9\n    |\n147 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:164:9\n    |\n164 |         n;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:180:9\n    |\n180 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:231:9\n    |\n231 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:253:9\n    |\n253 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:273:9\n    |\n273 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:416:9\n    |\n416 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:477:9\n    |\n477 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:497:13\n    |\n497 |             i_0;\n    |             ^^^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:552:9\n    |\n552 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:579:13\n    |\n579 |             j;\n    |             ^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:582:9\n    |\n582 |         i_0;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:601:9\n    |\n601 |         i_1;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/test3.rs:621:13\n    |\n621 |             i_2;\n    |             ^^^^\n\nwarning: path statement with no effect\n    --> tests/test3.rs:1022:9\n     |\n1022 |         i;\n     |         ^^\n\nerror: symbol `bigint_abs` is already defined\n   --> tests/test2.rs:333:1\n    |\n333 | pub unsafe extern \"C\" fn bigint_abs(mut n: bigint) -> bigint {\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `c2rust_out` (lib) generated 76 warnings\nerror: could not compile `c2rust_out` due to previous error; 76 warnings emitted\n"
+    },
+    "bitset": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test_bitset.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "blt": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "error: could not find `Cargo.toml` in `/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/blt` or any parent directory\n"
+    },
+    "bostree": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/bostree)\nwarning: path statement with no effect\n   --> bostree.rs:612:13\n    |\n612 |             index;\n    |             ^^^^^^\n    |\n    = note: `#[warn(path_statements)]` on by default\n\nwarning: path statement with no effect\n  --> tests/remove_bug.rs:74:9\n   |\n74 |         i;\n   |         ^^\n\nwarning: unused unary operation that must be used\n  --> tests/remove_bug.rs:98:9\n   |\n98 |         *fresh0;\n   |         ^^^^^^^ the unary operation produces a value\n   |\n   = note: `#[warn(unused_must_use)]` on by default\nhelp: use `let _ = ...` to ignore the resulting value\n   |\n98 |         let _ = *fresh0;\n   |         +++++++\n\nwarning: path statement with no effect\n  --> tests/remove_bug_2.rs:73:9\n   |\n73 |         i;\n   |         ^^\n\nwarning: path statement with no effect\n  --> tests/sanity.rs:87:9\n   |\n87 |         iter;\n   |         ^^^^^\n\nwarning: path statement with no effect\n   --> tests/sanity.rs:115:9\n    |\n115 |         iter;\n    |         ^^^^^\n\nwarning: path statement with no effect\n   --> tests/test_helpers.rs:112:9\n    |\n112 |         count;\n    |         ^^^^^^\n\nwarning: path statement with no effect\n   --> tests/test_helpers.rs:255:9\n    |\n255 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/timing.rs:138:17\n    |\n138 |                 j;\n    |                 ^^\n\nwarning: path statement with no effect\n   --> tests/timing.rs:164:9\n    |\n164 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/timing.rs:203:9\n    |\n203 |         i;\n    |         ^^\n\nerror: symbol `test_tree` is already defined\n  --> tests/remove_bug_2.rs:43:1\n   |\n43 | pub unsafe extern \"C\" fn test_tree() -> *mut BOSTree {\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `c2rust_out` (lib) generated 11 warnings\nerror: could not compile `c2rust_out` due to previous error; 11 warnings emitted\n"
+    },
+    "btree-map": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "c-aces": {
+        "status": "failed",
+        "failed_stage": "link",
+        "test_results": {
+            "tests/aces-internal-test.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/common-test.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/main-test.c": {
+                "status": "passed"
+            },
+            "tests/matrix-test.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/polynomial-test.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            }
+        }
+    },
+    "c-string": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/example.c": {
+                "status": "passed"
+            },
+            "tests/test_string_t.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "cJSON": {
+        "status": "failed",
+        "failed_stage": "link",
+        "test_results": {
+            "tests/example.c": {
+                "status": "link_failed",
+                "error": "tests/example.c: In function \u2018main\u2019:\ntests/example.c:26:9: warning: implicit declaration of function \u2018parse_and_callback\u2019 [-Wimplicit-function-declaration]\n   26 |         parse_and_callback(root, \"prefix\");\n      |         ^~~~~~~~~~~~~~~~~~\n/usr/bin/ld: /tmp/cc4VNt6e.o: in function `main':\nexample.c:(.text+0x175): undefined reference to `parse_and_callback'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/main.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "carrays": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "cfsm": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/cfsm)\nerror[E0583]: file not found for module `unity`\n  --> c2rust-lib.rs:18:1\n   |\n18 | pub mod unity;\n   | ^^^^^^^^^^^^^^\n   |\n   = help: to create the module `unity`, create file \"tests/Unity_2_5_2/src/unity.rs\" or \"tests/Unity_2_5_2/src/unity/mod.rs\"\n\nFor more information about this error, try `rustc --explain E0583`.\nerror: could not compile `c2rust_out` due to previous error\n"
+    },
+    "chtrie": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "clhash": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "error: could not find `Cargo.toml` in `/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/clhash` or any parent directory\n"
+    },
+    "clog": {
+        "status": "failed",
+        "failed_stage": "test",
+        "test_results": {
+            "tests/clog_test_c.c": {
+                "status": "failed",
+                "stdout": "test_double_init: OK\ntest_file_write: OK\ntest_file_write_nonexistent: OK\ntest_fd_write: OK\ntest_all_levels: OK\ntest_level_filtering: OK\ntest_multiple_loggers: OK\ntest_bad_format: OK\ntest_long_message: OK\ntest_reuse_logger_id: OK\ntest_performance: FAIL\n  Target 100000 msgs/sec, got 11596.\n\n10 successes, 1 failures.\nFailing cases:\n    test_performance\n",
+                "stderr": "Logger 0 already initialized.\nUnable to open path-doesnt-exist/log.out: No such file or directory\nclog_set_fmt: Format specifier too long.\n"
+            }
+        }
+    },
+    "coroutine": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "cset": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "csyncmers": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/csyncmers)\nwarning: `extern` fn uses type `u128`, which is not FFI-safe\n  --> tests/benchmark.rs:85:25\n   |\n85 |     mut minimizer_hash: __uint128_t,\n   |                         ^^^^^^^^^^^ not FFI-safe\n   |\n   = note: `#[warn(improper_ctypes_definitions)]` on by default\n   = note: 128-bit integers don't currently have a known stable ABI\n\nwarning: unused unary operation that must be used\n  --> tests/benchmark.rs:93:5\n   |\n93 |     *size;\n   |     ^^^^^ the unary operation produces a value\n   |\n   = note: `#[warn(unused_must_use)]` on by default\nhelp: use `let _ = ...` to ignore the resulting value\n   |\n93 |     let _ = *size;\n   |     +++++++\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:142:9\n    |\n142 |         i;\n    |         ^^\n    |\n    = note: `#[warn(path_statements)]` on by default\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:162:13\n    |\n162 |             back;\n    |             ^^^^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:171:13\n    |\n171 |             front;\n    |             ^^^^^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:194:9\n    |\n194 |         i_0;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:228:17\n    |\n228 |                 k;\n    |                 ^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:241:17\n    |\n241 |                 k_0;\n    |                 ^^^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:254:13\n    |\n254 |             j;\n    |             ^^\n\nwarning: unused unary operation that must be used\n   --> tests/benchmark.rs:264:13\n    |\n264 |             *num_results;\n    |             ^^^^^^^^^^^^ the unary operation produces a value\n    |\nhelp: use `let _ = ...` to ignore the resulting value\n    |\n264 |             let _ = *num_results;\n    |             +++++++\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:267:9\n    |\n267 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:304:13\n    |\n304 |             j;\n    |             ^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:309:9\n    |\n309 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:329:9\n    |\n329 |         i_0;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/benchmark.rs:350:9\n    |\n350 |         i_1;\n    |         ^^^^\n\nwarning: `extern` fn uses type `u128`, which is not FFI-safe\n  --> tests/test.rs:83:25\n   |\n83 |     mut minimizer_hash: __uint128_t,\n   |                         ^^^^^^^^^^^ not FFI-safe\n   |\n   = note: 128-bit integers don't currently have a known stable ABI\n\nwarning: unused unary operation that must be used\n  --> tests/test.rs:91:5\n   |\n91 |     *size;\n   |     ^^^^^ the unary operation produces a value\n   |\nhelp: use `let _ = ...` to ignore the resulting value\n   |\n91 |     let _ = *size;\n   |     +++++++\n\nwarning: path statement with no effect\n   --> tests/test.rs:140:9\n    |\n140 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:160:13\n    |\n160 |             back;\n    |             ^^^^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:169:13\n    |\n169 |             front;\n    |             ^^^^^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:192:9\n    |\n192 |         i_0;\n    |         ^^^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:226:17\n    |\n226 |                 k;\n    |                 ^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:239:17\n    |\n239 |                 k_0;\n    |                 ^^^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:252:13\n    |\n252 |             j;\n    |             ^^\n\nwarning: unused unary operation that must be used\n   --> tests/test.rs:262:13\n    |\n262 |             *num_results;\n    |             ^^^^^^^^^^^^ the unary operation produces a value\n    |\nhelp: use `let _ = ...` to ignore the resulting value\n    |\n262 |             let _ = *num_results;\n    |             +++++++\n\nwarning: path statement with no effect\n   --> tests/test.rs:265:9\n    |\n265 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:281:9\n    |\n281 |         i;\n    |         ^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:342:13\n    |\n342 |             i;\n    |             ^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:372:13\n    |\n372 |             i_0;\n    |             ^^^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:417:17\n    |\n417 |                 i_1;\n    |                 ^^^^\n\nwarning: path statement with no effect\n   --> tests/test.rs:430:9\n    |\n430 |         test;\n    |         ^^^^^\n\nerror: symbol `compute_closed_syncmers` is already defined\n   --> tests/test.rs:94:1\n    |\n94  | / pub unsafe extern \"C\" fn compute_closed_syncmers(\n95  | |     mut sequence_input: *const libc::c_char,\n96  | |     mut len: libc::c_int,\n97  | |     mut K: libc::c_int,\n...   |\n100 | |     mut num_results: *mut libc::c_int,\n101 | | ) {\n    | |_^\n\nwarning: `c2rust_out` (lib) generated 31 warnings\nerror: could not compile `c2rust_out` due to previous error; 31 warnings emitted\n"
+    },
+    "dict": {
+        "status": "failed",
+        "failed_stage": "test",
+        "test_results": {
+            "tests/test0.c": {
+                "status": "passed"
+            },
+            "tests/test1.c": {
+                "status": "passed"
+            },
+            "tests/test2.c": {
+                "status": "passed"
+            },
+            "tests/test3.c": {
+                "status": "passed"
+            },
+            "tests/test4.c": {
+                "status": "passed"
+            },
+            "tests/test5.c": {
+                "status": "failed",
+                "stdout": "",
+                "stderr": "Segmentation fault (core dumped)\n"
+            }
+        }
+    },
+    "emlang": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "error: could not find `Cargo.toml` in `/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/emlang` or any parent directory\n"
+    },
+    "fft": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/fft)\nerror[E0425]: cannot find function `next_reversed_n` in this scope\n  --> src/fft.rs:28:22\n   |\n28 |         reversed_n = next_reversed_n(reversed_n, shift);\n   |                      ^^^^^^^^^^^^^^^ help: a local variable with a similar name exists: `reversed_n`\n\nerror[E0425]: cannot find function `next_reversed_n` in this scope\n  --> src/fft.rs:47:22\n   |\n47 |         reversed_n = next_reversed_n(reversed_n, shift);\n   |                      ^^^^^^^^^^^^^^^ help: a local variable with a similar name exists: `reversed_n`\n\nFor more information about this error, try `rustc --explain E0425`.\nerror: could not compile `c2rust_out` due to 2 previous errors\n"
+    },
+    "file2str": {
+        "status": "failed",
+        "failed_stage": "link",
+        "test_results": {
+            "tests/CuTest.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/test_file2str.c": {
+                "status": "link_failed",
+                "error": "tests/test_file2str.c:9:10: fatal error: file2str.h: No such file or directory\n    9 | #include \"file2str.h\"\n      |          ^~~~~~~~~~~~\ncompilation terminated.\n"
+            }
+        }
+    },
+    "fslib": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "make: *** No rule to make target 'obj/test.o', needed by 'fscompile'.  Stop.\n"
+    },
+    "geofence": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "gfc": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "make: *** No targets specified and no makefile found.  Stop.\n"
+    },
+    "hydra": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "inversion_list": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/inversion_list)\nerror[E0583]: file not found for module `inversion_list`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod inversion_list;\n   | ^^^^^^^^^^^^^^^^^^^^^^^\n   |\n   = help: to create the module `inversion_list`, create file \"src/inversion_list/inversion_list.rs\" or \"src/inversion_list/inversion_list/mod.rs\"\n\nFor more information about this error, try `rustc --explain E0583`.\nerror: could not compile `c2rust_out` due to previous error\n"
+    },
+    "jccc": {
+        "status": "failed",
+        "failed_stage": "test",
+        "test_results": {
+            "tests/identtest.c": {
+                "status": "failed",
+                "stdout": "",
+                "stderr": ""
+            },
+            "tests/lextest.c": {
+                "status": "passed"
+            },
+            "tests/mathtest.c": {
+                "status": "failed",
+                "stdout": "",
+                "stderr": ""
+            },
+            "tests/optest.c": {
+                "status": "link_failed",
+                "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+            },
+            "tests/simplemain.c": {
+                "status": "failed",
+                "stdout": "",
+                "stderr": ""
+            }
+        }
+    },
+    "kairoCompiler": {
+        "status": "failed",
+        "failed_stage": "link",
+        "test_results": {
+            "tests/main.c": {
+                "status": "link_failed",
+                "error": "tests/main.c:2:10: fatal error: helpers/vector.h: No such file or directory\n    2 | #include \"helpers/vector.h\"\n      |          ^~~~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            },
+            "tests/test.c": {
+                "status": "link_failed",
+                "error": "tests/test.c:1:1: error: expected identifier or \u2018(\u2019 before numeric constant\n    1 | 877\n      | ^~~\n"
+            },
+            "tests/test2.c": {
+                "status": "link_failed",
+                "error": "tests/test2.c:1:1: error: expected identifier or \u2018(\u2019 before numeric constant\n    1 | 876\n      | ^~~\n"
+            }
+        }
+    },
+    "lambda-calculus-eval": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x1b): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\nmake: *** [Makefile:17: lc] Error 1\n"
+    },
+    "libpgn": {
+        "status": "failed",
+        "failed_stage": "link",
+        "test_results": {
+            "tests/annotation.c": {
+                "status": "link_failed",
+                "error": "tests/annotation.c:1:10: fatal error: extra/suite6.h: No such file or directory\n    1 | #include \"extra/suite6.h\"\n      |          ^~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            },
+            "tests/comments.c": {
+                "status": "link_failed",
+                "error": "tests/comments.c:1:10: fatal error: extra/suite6.h: No such file or directory\n    1 | #include \"extra/suite6.h\"\n      |          ^~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            },
+            "tests/coordinate.c": {
+                "status": "link_failed",
+                "error": "tests/coordinate.c:1:10: fatal error: extra/suite6.h: No such file or directory\n    1 | #include \"extra/suite6.h\"\n      |          ^~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            },
+            "tests/metadata.c": {
+                "status": "link_failed",
+                "error": "tests/metadata.c:1:10: fatal error: extra/suite6.h: No such file or directory\n    1 | #include \"extra/suite6.h\"\n      |          ^~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            },
+            "tests/moves.c": {
+                "status": "link_failed",
+                "error": "tests/moves.c:1:10: fatal error: extra/suite6.h: No such file or directory\n    1 | #include \"extra/suite6.h\"\n      |          ^~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            },
+            "tests/pgn.c": {
+                "status": "link_failed",
+                "error": "tests/pgn.c:1:10: fatal error: extra/suite6.h: No such file or directory\n    1 | #include \"extra/suite6.h\"\n      |          ^~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            },
+            "tests/score.c": {
+                "status": "link_failed",
+                "error": "tests/score.c:1:10: fatal error: extra/suite6.h: No such file or directory\n    1 | #include \"extra/suite6.h\"\n      |          ^~~~~~~~~~~~~~~~\ncompilation terminated.\n"
+            }
+        }
+    },
+    "libwecan": {
+        "status": "failed",
+        "failed_stage": "link",
+        "test_results": {
+            "tests/src/tests.c": {
+                "status": "link_failed",
+                "error": "tests/src/tests.c:1:10: fatal error: libwecan.h: No such file or directory\n    1 | #include \"libwecan.h\"\n      |          ^~~~~~~~~~~~\ncompilation terminated.\n"
+            }
+        }
+    },
+    "matrix_multiplication": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "make: *** No targets specified and no makefile found.  Stop.\n"
+    },
+    "morton": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "error: could not find `Cargo.toml` in `/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/morton` or any parent directory\n"
+    },
+    "simple_lang": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "make: *** No targets specified and no makefile found.  Stop.\n"
+    },
+    "ted": {
+        "status": "failed",
+        "failed_stage": "rust_build",
+        "test_results": {},
+        "error": "   Compiling libc v0.2.177\n   Compiling c2rust_out v0.0.0 (/mnt/c/Users/wuihee/Desktop/hayroll-tests/CBench/ted)\nerror[E0425]: cannot find function `getline` in this scope\n   --> buffer/buffer.rs:298:16\n    |\n298 |         read = getline(&mut line, &mut len, fp) as size_t;\n    |                ^^^^^^^ not found in this scope\n    |\nhelp: consider importing one of these items\n    |\n1   | use crate::buffer::buffer::libc::getline;\n    |\n1   | use libc::getline;\n    |\n\nFor more information about this error, try `rustc --explain E0425`.\nerror: could not compile `c2rust_out` due to previous error\n"
+    },
+    "ulidgen": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "utf8": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "vec": {
+        "status": "passed",
+        "failed_stage": null,
+        "test_results": {
+            "tests/test.c": {
+                "status": "passed"
+            }
+        }
+    },
+    "worsp": {
+        "status": "failed",
+        "failed_stage": "make",
+        "test_results": {},
+        "error": "src/worsp.c: In function \u2018definedFunctionMod\u2019:\nsrc/worsp.c:595:40: warning: ' ' flag used with \u2018%m\u2019 gnu_printf format [-Wformat=]\n  595 |     printf(\"Type error: operands for % must be integers.\\n\");\n      |                                        ^\nsrc/worsp.c: In function \u2018stringifyObject\u2019:\nsrc/worsp.c:516:9: warning: \u2018strncat\u2019 specified bound 1 equals source length [-Wstringop-overflow=]\n  516 |         strncat(str, \" \", 1);\n      |         ^~~~~~~~~~~~~~~~~~~~\nsrc/worsp.c:529:5: warning: \u2018strncpy\u2019 output truncated before terminating nul copying 10 bytes from a string of the same length [-Wstringop-truncation]\n  529 |     strncpy(str, \"<function>\", 10);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nsrc/worsp.c:495:7: warning: \u2018__builtin_memcpy\u2019 writing 2 bytes into a region of size 1 overflows the destination [-Wstringop-overflow=]\n  495 |       strncpy(str, \"T\", 2);\n      |       ^~~~~~~~~~~~~~~~~~~~\nsrc/worsp.c:493:25: note: destination object of size 1 allocated by \u2018malloc\u2019\n  493 |     char *str = (char *)malloc(1 * sizeof(char));\n      |                         ^~~~~~~~~~~~~~~~~~~~~~~~\nsrc/worsp.c:497:7: warning: \u2018__builtin_memcpy\u2019 writing 2 bytes into a region of size 1 overflows the destination [-Wstringop-overflow=]\n  497 |       strncpy(str, \"F\", 2);\n      |       ^~~~~~~~~~~~~~~~~~~~\nsrc/worsp.c:493:25: note: destination object of size 1 allocated by \u2018malloc\u2019\n  493 |     char *str = (char *)malloc(1 * sizeof(char));\n      |                         ^~~~~~~~~~~~~~~~~~~~~~~~\nsrc/worsp.c:529:5: warning: \u2018__builtin_memcpy\u2019 writing 10 bytes into a region of size 9 overflows the destination [-Wstringop-overflow=]\n  529 |     strncpy(str, \"<function>\", 10);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nsrc/worsp.c:528:25: note: destination object of size 9 allocated by \u2018malloc\u2019\n  528 |     char *str = (char *)malloc(9 * sizeof(char));\n      |                         ^~~~~~~~~~~~~~~~~~~~~~~~\nbin/main.c:1:10: fatal error: worsp.h: No such file or directory\n    1 | #include \"worsp.h\"\n      |          ^~~~~~~~~\ncompilation terminated.\nmake: *** [Makefile:26: main] Error 1\n"
+    }
+}
