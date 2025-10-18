@@ -1,8 +1,6 @@
 # Hayroll Tests
 
-`metadata.json` contains metadata about each program in the CRUST benchmark, and is used to run the transpilation and tests.
-
-The current results of the benchmark can be viewed at [`benchmark_summary.json`](./benchmark_summary.json).
+The current results of the benchmark can be viewed at [`test_results.json`](test_results.json).
 
 ## Prerequisites
 
@@ -13,11 +11,15 @@ Requires `CBench` directory from the CRUST benchmark to be copied into this repo
 To transpile and run tests:
 
 ```sh
-python benchmark.py
+python3 scripts/run_tests.py
 ```
 
-To view the results:
+To generate metadata used to run tests:
 
 ```sh
-python analyze.py
+python3 scripts/generate_metadata.py
 ```
+
+## Notes
+
+Currently excluding `skp` program because it always seems to hang.

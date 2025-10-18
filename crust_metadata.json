@@ -1,717 +1,832 @@
 {
     "programs": [
         {
-            "name": "Linear-Algebra-C",
-            "path": "CBench/Linear-Algebra-C",
-            "tests": ["CBench/Linear-Algebra-C/test.c"]
-        },
-        {
-            "name": "cJSON",
-            "path": "CBench/cJSON",
+            "name": "2DPartInt",
+            "path": "CBench/2DPartInt",
             "tests": [
-                "CBench/cJSON/tests/example.c",
-                "CBench/cJSON/tests/main.c"
+                "test/functions_spec.c"
             ]
-        },
-        {
-            "name": "bitset",
-            "path": "CBench/bitset",
-            "tests": ["CBench/bitset/tests/test_bitset.c"]
-        },
-        {
-            "name": "carrays",
-            "path": "CBench/carrays",
-            "tests": ["CBench/carrays/tests/test.c"]
-        },
-        {
-            "name": "c-blind-rsa-signatures",
-            "path": "CBench/c-blind-rsa-signatures",
-            "tests": ["CBench/c-blind-rsa-signatures/src/test_blind_rsa.c"]
-        },
-        {
-            "name": "kairoCompiler",
-            "path": "CBench/kairoCompiler",
-            "tests": [
-                "CBench/kairoCompiler/tests/main.c",
-                "CBench/kairoCompiler/tests/test.c",
-                "CBench/kairoCompiler/tests/test2.c"
-            ]
-        },
-        {
-            "name": "NandC",
-            "path": "CBench/NandC",
-            "tests": ["CBench/NandC/tests/test.c"]
-        },
-        {
-            "name": "approxidate",
-            "path": "CBench/approxidate",
-            "tests": ["CBench/approxidate/approxidate-test.c"]
         },
         {
             "name": "42-Kocaeli-Printf",
             "path": "CBench/42-Kocaeli-Printf",
             "tests": [
-                "CBench/42-Kocaeli-Printf/tests/writenumber_test.c",
-                "CBench/42-Kocaeli-Printf/tests/writestring_test.c"
+                "tests/writenumber_test.c",
+                "tests/writestring_test.c"
             ]
         },
         {
-            "name": "c-aces",
-            "path": "CBench/c-aces",
+            "name": "aes128-SIMD",
+            "path": "CBench/aes128-SIMD",
             "tests": [
-                "CBench/c-aces/tests/aces-internal-test.c",
-                "CBench/c-aces/tests/common-test.c",
-                "CBench/c-aces/tests/main-test.c",
-                "CBench/c-aces/tests/matrix-test.c",
-                "CBench/c-aces/tests/polynomial-test.c"
+                "tests/test.c"
             ]
         },
         {
-            "name": "btree-map",
-            "path": "CBench/btree-map",
-            "tests": ["CBench/btree-map/tests/test.c"]
-        },
-        {
-            "name": "ted",
-            "path": "CBench/ted",
-            "tests": ["CBench/ted/tests/runtests.c"]
-        },
-        {
-            "name": "fleur",
-            "path": "CBench/fleur",
+            "name": "amp",
+            "path": "CBench/amp",
             "tests": [
-                "CBench/fleur/test/suite_1/test_vectors.c",
-                "CBench/fleur/test/suite_2/test_fleur.c"
+                "tests/test.c"
             ]
         },
         {
-            "name": "rbtree-lab",
-            "path": "CBench/rbtree-lab",
+            "name": "approxidate",
+            "path": "CBench/approxidate",
             "tests": [
-                "CBench/rbtree-lab/test/final-test-rbtree.c",
-                "CBench/rbtree-lab/test/test-rbtree.c",
-                "CBench/rbtree-lab/test/test_rbtree_insert.c",
-                "CBench/rbtree-lab/test/test_rbtree_rotate.c"
+                "approxidate-test.c"
             ]
         },
         {
-            "name": "mdb",
-            "path": "CBench/mdb",
-            "tests": ["CBench/mdb/testmdb.c", "CBench/mdb/testmdb_int.c"]
-        },
-        {
-            "name": "cset",
-            "path": "CBench/cset",
-            "tests": ["CBench/cset/tests/test.c"]
-        },
-        {
-            "name": "CircularBuffer",
-            "path": "CBench/CircularBuffer",
-            "tests": ["CBench/CircularBuffer/tests/test.c"]
-        },
-        {
-            "name": "worsp",
-            "path": "CBench/worsp",
-            "tests": ["CBench/worsp/tests/test.c"]
-        },
-        {
-            "name": "skp",
-            "path": "CBench/skp",
+            "name": "avalanche",
+            "path": "CBench/avalanche",
             "tests": [
-                "CBench/skp/test/ut_test1.c",
-                "CBench/skp/test/ut_test2.c",
-                "CBench/skp/test/ut_test3.c"
+                "tests/fnv_1a.c",
+                "tests/matrix_test.c"
             ]
         },
         {
-            "name": "hamta",
-            "path": "CBench/hamta",
-            "tests": ["CBench/hamta/test/test.c"]
-        },
-        {
-            "name": "jccc",
-            "path": "CBench/jccc",
+            "name": "bhshell",
+            "path": "CBench/bhshell",
             "tests": [
-                "CBench/jccc/src/codegen/x86/test_x86.c",
-                "CBench/jccc/src/lexer/test_lexer.c",
-                "CBench/jccc/src/testing/test_utils.c",
-                "CBench/jccc/src/util/test_list.c",
-                "CBench/jccc/src/util/test_util.c",
-                "CBench/jccc/tests/identtest.c",
-                "CBench/jccc/tests/lextest.c",
-                "CBench/jccc/tests/mathtest.c",
-                "CBench/jccc/tests/optest.c",
-                "CBench/jccc/tests/simplemain.c"
+                "tests/test.c"
             ]
         },
         {
             "name": "bigint",
             "path": "CBench/bigint",
             "tests": [
-                "CBench/bigint/tests/test1.c",
-                "CBench/bigint/tests/test2.c",
-                "CBench/bigint/tests/test3.c"
+                "tests/test3.c",
+                "tests/test2.c",
+                "tests/test1.c"
             ]
         },
         {
-            "name": "inversion_list",
-            "path": "CBench/inversion_list",
+            "name": "bitset",
+            "path": "CBench/bitset",
             "tests": [
-                "CBench/inversion_list/tests/inversion-list/test-clone.c",
-                "CBench/inversion_list/tests/inversion-list/test-complement.c",
-                "CBench/inversion_list/tests/inversion-list/test-couple-iterator.c",
-                "CBench/inversion_list/tests/inversion-list/test-create-destroy-2.c",
-                "CBench/inversion_list/tests/inversion-list/test-create-destroy-3.c",
-                "CBench/inversion_list/tests/inversion-list/test-create-destroy-4.c",
-                "CBench/inversion_list/tests/inversion-list/test-difference.c",
-                "CBench/inversion_list/tests/inversion-list/test-equals.c",
-                "CBench/inversion_list/tests/inversion-list/test-getters.c",
-                "CBench/inversion_list/tests/inversion-list/test-intersection.c",
-                "CBench/inversion_list/tests/inversion-list/test-iterator.c",
-                "CBench/inversion_list/tests/inversion-list/test-member.c",
-                "CBench/inversion_list/tests/inversion-list/test-struct.c",
-                "CBench/inversion_list/tests/inversion-list/test-to-string.c",
-                "CBench/inversion_list/tests/inversion-list/test-union.c"
-            ]
-        },
-        {
-            "name": "satc",
-            "path": "CBench/satc",
-            "tests": ["CBench/satc/satc-test.c"]
-        },
-        {
-            "name": "LTRE",
-            "path": "CBench/LTRE",
-            "tests": ["CBench/LTRE/test.c"]
-        },
-        {
-            "name": "Megalania",
-            "path": "CBench/Megalania",
-            "tests": [
-                "CBench/Megalania/tests/main.c",
-                "CBench/Megalania/tests/max_heap_test.c",
-                "CBench/Megalania/tests/packet_slab_undo_stack_test.c",
-                "CBench/Megalania/tests/substring_enumerator_test.c"
-            ]
-        },
-        {
-            "name": "tisp",
-            "path": "CBench/tisp",
-            "tests": ["CBench/tisp/test.c"]
-        },
-        {
-            "name": "coroutine",
-            "path": "CBench/coroutine",
-            "tests": ["CBench/coroutine/tests/test.c"]
-        },
-        {
-            "name": "libbase122",
-            "path": "CBench/libbase122",
-            "tests": [
-                "CBench/libbase122/test/assertions.c",
-                "CBench/libbase122/test/fuzz.c",
-                "CBench/libbase122/test/test.c",
-                "CBench/libbase122/test/testconsumer/testconsumer.c"
-            ]
-        },
-        {
-            "name": "cissy",
-            "path": "CBench/cissy",
-            "tests": [
-                "CBench/cissy/test/test_csvfield.c",
-                "CBench/cissy/test/test_csvline.c",
-                "CBench/cissy/test/test_range.c"
-            ]
-        },
-        {
-            "name": "libutf",
-            "path": "CBench/libutf",
-            "tests": [
-                "CBench/libutf/test/utf16/utf8-convert.c",
-                "CBench/libutf/test/utf16/utf8-length.c",
-                "CBench/libutf/test/utf16/validate-invalid.c",
-                "CBench/libutf/test/utf16/validate.c",
-                "CBench/libutf/test/utf8/string-append.c",
-                "CBench/libutf/test/utf8/string-prepend.c",
-                "CBench/libutf/test/utf8/string-replace.c",
-                "CBench/libutf/test/utf8/string-substring.c",
-                "CBench/libutf/test/utf8/utf16-convert.c",
-                "CBench/libutf/test/utf8/utf16-length.c",
-                "CBench/libutf/test/utf8/validate-invalid.c",
-                "CBench/libutf/test/utf8/validate.c"
-            ]
-        },
-        {
-            "name": "libpgn",
-            "path": "CBench/libpgn",
-            "tests": [
-                "CBench/libpgn/tests/annotation.c",
-                "CBench/libpgn/tests/comments.c",
-                "CBench/libpgn/tests/coordinate.c",
-                "CBench/libpgn/tests/metadata.c",
-                "CBench/libpgn/tests/moves.c",
-                "CBench/libpgn/tests/pgn.c",
-                "CBench/libpgn/tests/score.c"
-            ]
-        },
-        {
-            "name": "leftpad",
-            "path": "CBench/leftpad",
-            "tests": ["CBench/leftpad/tests.c"]
-        },
-        {
-            "name": "Remimu",
-            "path": "CBench/Remimu",
-            "tests": ["CBench/Remimu/my_regex_test.c"]
-        },
-        {
-            "name": "utf8",
-            "path": "CBench/utf8",
-            "tests": ["CBench/utf8/tests/test.c"]
-        },
-        {
-            "name": "rhbloom",
-            "path": "CBench/rhbloom",
-            "tests": ["CBench/rhbloom/test.c"]
-        },
-        {
-            "name": "c-string",
-            "path": "CBench/c-string",
-            "tests": [
-                "CBench/c-string/tests/example.c",
-                "CBench/c-string/tests/test_string_t.c"
-            ]
-        },
-        {
-            "name": "SlothLang",
-            "path": "CBench/SlothLang",
-            "tests": ["CBench/SlothLang/tests.c"]
-        },
-        {
-            "name": "fs_c",
-            "path": "CBench/fs_c",
-            "tests": ["CBench/fs_c/test.c"]
-        },
-        {
-            "name": "morton",
-            "path": "CBench/morton",
-            "tests": [
-                "CBench/morton/tests/bench.c",
-                "CBench/morton/tests/test.c"
-            ]
-        },
-        {
-            "name": "murmurhash_c",
-            "path": "CBench/murmurhash_c",
-            "tests": ["CBench/murmurhash_c/test.c"]
-        },
-        {
-            "name": "clog",
-            "path": "CBench/clog",
-            "tests": ["CBench/clog/tests/clog_test_c.c"]
-        },
-        {
-            "name": "recordManager",
-            "path": "CBench/recordManager",
-            "tests": [
-                "CBench/recordManager/test_assign3_1.c",
-                "CBench/recordManager/test_expr.c"
-            ]
-        },
-        { "name": "2DPartInt", "path": "CBench/2DPartInt.zip", "tests": [] },
-        {
-            "name": "aes128-SIMD",
-            "path": "CBench/aes128-SIMD",
-            "tests": ["CBench/aes128-SIMD/tests/test.c"]
-        },
-        {
-            "name": "libvcd",
-            "path": "CBench/libvcd",
-            "tests": ["CBench/libvcd/test/test.c"]
-        },
-        {
-            "name": "simple_lang",
-            "path": "CBench/simple_lang",
-            "tests": [
-                "CBench/simple_lang/Tests/test_compiler.c",
-                "CBench/simple_lang/Tests/test_lexer.c",
-                "CBench/simple_lang/Tests/test_parser.c",
-                "CBench/simple_lang/tests/test_compiler.c",
-                "CBench/simple_lang/tests/test_lexer.c",
-                "CBench/simple_lang/tests/test_parser.c"
-            ]
-        },
-        {
-            "name": "bostree",
-            "path": "CBench/bostree",
-            "tests": [
-                "CBench/bostree/tests/remove_bug.c",
-                "CBench/bostree/tests/remove_bug_2.c",
-                "CBench/bostree/tests/sanity.c",
-                "CBench/bostree/tests/test_helpers.c",
-                "CBench/bostree/tests/timing.c"
-            ]
-        },
-        {
-            "name": "impcheck",
-            "path": "CBench/impcheck",
-            "tests": [
-                "CBench/impcheck/test/test.c",
-                "CBench/impcheck/test/test_full.c",
-                "CBench/impcheck/test/test_hash.c"
-            ]
-        },
-        {
-            "name": "expr",
-            "path": "CBench/expr",
-            "tests": ["CBench/expr/test.c"]
-        },
-        {
-            "name": "roaring-bitmap",
-            "path": "CBench/roaring-bitmap",
-            "tests": ["CBench/roaring-bitmap/tests.c"]
-        },
-        {
-            "name": "Genetic-neural-network-for-simple-control",
-            "path": "CBench/Genetic-neural-network-for-simple-control",
-            "tests": [
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/general/test_matrixes.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/general/test_pid_controller.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/general/test_signal_designer.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/general/test_sort.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/general/test_system_builder.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/genetic/test_genetic_operations.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/genetic/test_population.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/neural/test_activation_fnc.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/neural/test_model_system.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/neural/test_neural_network.c",
-                "CBench/Genetic-neural-network-for-simple-control/test/tests/runs/test_full_run.c"
-            ]
-        },
-        {
-            "name": "libbeaufort",
-            "path": "CBench/libbeaufort",
-            "tests": ["CBench/libbeaufort/test.c"]
-        },
-        {
-            "name": "fslib",
-            "path": "CBench/fslib",
-            "tests": [
-                "CBench/fslib/src/shortest.c",
-                "CBench/fslib/tests/test.c"
-            ]
-        },
-        {
-            "name": "clhash",
-            "path": "CBench/clhash",
-            "tests": ["CBench/clhash/tests/unit.c"]
-        },
-        {
-            "name": "rubiksolver",
-            "path": "CBench/rubiksolver",
-            "tests": [
-                "CBench/rubiksolver/hash/hash_tests.c",
-                "CBench/rubiksolver/heap/heap_tests.c",
-                "CBench/rubiksolver/rubik_model_tests.c"
-            ]
-        },
-        {
-            "name": "Math-Library-in-C",
-            "path": "CBench/Math-Library-in-C",
-            "tests": ["CBench/Math-Library-in-C/test/tests.c"]
-        },
-        {
-            "name": "cfsm",
-            "path": "CBench/cfsm",
-            "tests": [
-                "CBench/cfsm/tests/Unity-2.5.2/src/unity.c",
-                "CBench/cfsm/tests/test_c_fsm.c"
-            ]
-        },
-        {
-            "name": "libm17",
-            "path": "CBench/libm17",
-            "tests": ["CBench/libm17/unit_tests/unit_tests.c"]
-        },
-        {
-            "name": "libwecan",
-            "path": "CBench/libwecan",
-            "tests": ["CBench/libwecan/tests/src/tests.c"]
-        },
-        {
-            "name": "libqueue",
-            "path": "CBench/libqueue",
-            "tests": [
-                "CBench/libqueue/test/example.c",
-                "CBench/libqueue/test/test.c"
-            ]
-        },
-        {
-            "name": "emlang",
-            "path": "CBench/emlang",
-            "tests": ["CBench/emlang/tests/test.c"]
-        },
-        {
-            "name": "geofence",
-            "path": "CBench/geofence",
-            "tests": ["CBench/geofence/tests/test.c"]
-        },
-        {
-            "name": "kd3",
-            "path": "CBench/kd3",
-            "tests": ["CBench/kd3/run_test.c"]
-        },
-        {
-            "name": "vec",
-            "path": "CBench/vec",
-            "tests": ["CBench/vec/tests/test.c"]
-        },
-        {
-            "name": "Simple-Config",
-            "path": "CBench/Simple-Config",
-            "tests": [
-                "CBench/Simple-Config/test/test.c",
-                "CBench/Simple-Config/test/test_get.c",
-                "CBench/Simple-Config/test/test_load.c",
-                "CBench/Simple-Config/test/test_parse.c",
-                "CBench/Simple-Config/test/test_print.c",
-                "CBench/Simple-Config/test/utils.c"
-            ]
-        },
-        {
-            "name": "csyncmers",
-            "path": "CBench/csyncmers",
-            "tests": [
-                "CBench/csyncmers/tests/benchmark.c",
-                "CBench/csyncmers/tests/test.c"
-            ]
-        },
-        {
-            "name": "amp",
-            "path": "CBench/amp",
-            "tests": ["CBench/amp/tests/test.c"]
-        },
-        {
-            "name": "XOpt",
-            "path": "CBench/XOpt",
-            "tests": [
-                "CBench/XOpt/test/macro-test.c",
-                "CBench/XOpt/test/simple-test.c"
-            ]
-        },
-        {
-            "name": "rect_pack_h",
-            "path": "CBench/rect_pack_h",
-            "tests": ["CBench/rect_pack_h/test/test.c"]
-        },
-        {
-            "name": "FastHamming",
-            "path": "CBench/FastHamming",
-            "tests": [
-                "CBench/FastHamming/test/coding.c",
-                "CBench/FastHamming/test/dummy.c",
-                "CBench/FastHamming/test/log2uint8.c"
+                "tests/test_bitset.c"
             ]
         },
         {
             "name": "blt",
             "path": "CBench/blt",
             "tests": [
-                "CBench/blt/tests/blt_test.c",
-                "CBench/blt/tests/cbt_bm.c"
+                "tests/blt_test.c",
+                "tests/cbt_bm.c"
             ]
         },
         {
-            "name": "razz_simulation",
-            "path": "CBench/razz_simulation",
-            "tests": ["CBench/razz_simulation/card_test.c"]
+            "name": "bostree",
+            "path": "CBench/bostree",
+            "tests": [
+                "tests/remove_bug.c",
+                "tests/test_helpers.c",
+                "tests/remove_bug_2.c",
+                "tests/timing.c",
+                "tests/sanity.c"
+            ]
         },
         {
-            "name": "avalanche",
-            "path": "CBench/avalanche",
+            "name": "btree-map",
+            "path": "CBench/btree-map",
             "tests": [
-                "CBench/avalanche/tests/fnv_1a.c",
-                "CBench/avalanche/tests/matrix_test.c"
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "c-aces",
+            "path": "CBench/c-aces",
+            "tests": [
+                "tests/polynomial-test.c",
+                "tests/main-test.c",
+                "tests/aces-internal-test.c",
+                "tests/common-test.c",
+                "tests/matrix-test.c"
+            ]
+        },
+        {
+            "name": "c-blind-rsa-signatures",
+            "path": "CBench/c-blind-rsa-signatures",
+            "tests": [
+                "src/test_blind_rsa.c"
+            ]
+        },
+        {
+            "name": "c-string",
+            "path": "CBench/c-string",
+            "tests": [
+                "tests/example.c",
+                "tests/test_string_t.c"
+            ]
+        },
+        {
+            "name": "carrays",
+            "path": "CBench/carrays",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "cfsm",
+            "path": "CBench/cfsm",
+            "tests": [
+                "tests/test_c_fsm.c",
+                "tests/Unity-2.5.2/src/unity.c"
+            ]
+        },
+        {
+            "name": "chtrie",
+            "path": "CBench/chtrie",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "CircularBuffer",
+            "path": "CBench/CircularBuffer",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "cissy",
+            "path": "CBench/cissy",
+            "tests": [
+                "test/test_csvfield.c",
+                "test/test_csvline.c",
+                "test/test_range.c"
+            ]
+        },
+        {
+            "name": "cJSON",
+            "path": "CBench/cJSON",
+            "tests": [
+                "tests/main.c",
+                "tests/example.c"
+            ]
+        },
+        {
+            "name": "clhash",
+            "path": "CBench/clhash",
+            "tests": [
+                "tests/unit.c"
+            ]
+        },
+        {
+            "name": "clog",
+            "path": "CBench/clog",
+            "tests": [
+                "tests/clog_test_c.c"
+            ]
+        },
+        {
+            "name": "coroutine",
+            "path": "CBench/coroutine",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "cset",
+            "path": "CBench/cset",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "csyncmers",
+            "path": "CBench/csyncmers",
+            "tests": [
+                "tests/test.c",
+                "tests/benchmark.c"
+            ]
+        },
+        {
+            "name": "dict",
+            "path": "CBench/dict",
+            "tests": [
+                "tests/test2.c",
+                "tests/test3.c",
+                "tests/test1.c",
+                "tests/test5.c",
+                "tests/test4.c",
+                "tests/test0.c"
+            ]
+        },
+        {
+            "name": "emlang",
+            "path": "CBench/emlang",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "expr",
+            "path": "CBench/expr",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "FastHamming",
+            "path": "CBench/FastHamming",
+            "tests": [
+                "test/dummy.c",
+                "test/log2uint8.c",
+                "test/coding.c"
+            ]
+        },
+        {
+            "name": "fft",
+            "path": "CBench/fft",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "file2str",
+            "path": "CBench/file2str",
+            "tests": [
+                "tests/CuTest.c",
+                "tests/test_file2str.c"
+            ]
+        },
+        {
+            "name": "fleur",
+            "path": "CBench/fleur",
+            "tests": [
+                "test/suite_1/test_vectors.c",
+                "test/suite_2/test_fleur.c"
+            ]
+        },
+        {
+            "name": "fslib",
+            "path": "CBench/fslib",
+            "tests": [
+                "src/shortest.c",
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "fs_c",
+            "path": "CBench/fs_c",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "Genetic-neural-network-for-simple-control",
+            "path": "CBench/Genetic-neural-network-for-simple-control",
+            "tests": [
+                "test/tests/genetic/test_genetic_operations.c",
+                "test/tests/neural/test_neural_network.c",
+                "test/tests/general/test_system_builder.c",
+                "test/tests/runs/test_full_run.c",
+                "test/tests/general/test_pid_controller.c",
+                "test/tests/general/test_matrixes.c",
+                "test/tests/neural/test_model_system.c",
+                "test/tests/general/test_signal_designer.c",
+                "test/tests/genetic/test_population.c",
+                "test/tests/neural/test_activation_fnc.c",
+                "test/tests/general/test_sort.c"
+            ]
+        },
+        {
+            "name": "geofence",
+            "path": "CBench/geofence",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "gfc",
+            "path": "CBench/gfc",
+            "tests": [
+                "tests/gfc_bench.c",
+                "tests/gfc_test.c"
+            ]
+        },
+        {
+            "name": "gorilla-paper-encode",
+            "path": "CBench/gorilla-paper-encode",
+            "tests": [
+                "test.c",
+                "custom_tests/test.c"
+            ]
+        },
+        {
+            "name": "Graph-recogniser",
+            "path": "CBench/Graph-recogniser",
+            "tests": [
+                "tests/test-cuckoohash.c",
+                "tests/test-unit.c",
+                "tests/test-openhash.c"
+            ]
+        },
+        {
+            "name": "hamta",
+            "path": "CBench/hamta",
+            "tests": [
+                "test/test.c"
+            ]
+        },
+        {
+            "name": "Holdem-Odds",
+            "path": "CBench/Holdem-Odds",
+            "tests": [
+                "src/tests/all_tests.c",
+                "src/tests/test_deck.c",
+                "src/tests/test_bucket.c",
+                "src/tests/test_cards.c",
+                "src/tests/test_hands.c"
+            ]
+        },
+        {
+            "name": "hydra",
+            "path": "CBench/hydra",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "impcheck",
+            "path": "CBench/impcheck",
+            "tests": [
+                "test/test_full.c",
+                "test/test.c",
+                "test/test_hash.c"
+            ]
+        },
+        {
+            "name": "inversion_list",
+            "path": "CBench/inversion_list",
+            "tests": [
+                "tests/inversion-list/test-couple-iterator.c",
+                "tests/inversion-list/test-union.c",
+                "tests/inversion-list/test-equals.c",
+                "tests/inversion-list/test-difference.c",
+                "tests/inversion-list/test-struct.c",
+                "tests/inversion-list/test-create-destroy-4.c",
+                "tests/inversion-list/test-member.c",
+                "tests/inversion-list/test-create-destroy-2.c",
+                "tests/inversion-list/test-create-destroy-3.c",
+                "tests/inversion-list/test-getters.c",
+                "tests/inversion-list/test-intersection.c",
+                "tests/inversion-list/test-clone.c",
+                "tests/inversion-list/test-iterator.c",
+                "tests/inversion-list/test-to-string.c",
+                "tests/inversion-list/test-complement.c"
+            ]
+        },
+        {
+            "name": "jccc",
+            "path": "CBench/jccc",
+            "tests": [
+                "src/util/test_list.c",
+                "tests/simplemain.c",
+                "src/testing/test_utils.c",
+                "src/codegen/x86/test_x86.c",
+                "tests/identtest.c",
+                "src/lexer/test_lexer.c",
+                "tests/optest.c",
+                "tests/mathtest.c",
+                "tests/lextest.c",
+                "src/util/test_util.c"
+            ]
+        },
+        {
+            "name": "kairoCompiler",
+            "path": "CBench/kairoCompiler",
+            "tests": [
+                "tests/test.c",
+                "tests/main.c",
+                "tests/test2.c"
+            ]
+        },
+        {
+            "name": "kd3",
+            "path": "CBench/kd3",
+            "tests": [
+                "run_test.c"
+            ]
+        },
+        {
+            "name": "lambda-calculus-eval",
+            "path": "CBench/lambda-calculus-eval",
+            "tests": [
+                "tests/test_parser.c",
+                "tests/test_common.c",
+                "tests/test_io.c",
+                "tests/test_reducer.c",
+                "tests/test_config.c",
+                "tests/test_typechecker.c",
+                "tests/tests.c"
+            ]
+        },
+        {
+            "name": "leftpad",
+            "path": "CBench/leftpad",
+            "tests": [
+                "tests.c"
+            ]
+        },
+        {
+            "name": "lib2bit",
+            "path": "CBench/lib2bit",
+            "tests": [
+                "test/exampleRead.c"
+            ]
+        },
+        {
+            "name": "libbase122",
+            "path": "CBench/libbase122",
+            "tests": [
+                "test/fuzz.c",
+                "test/testconsumer/testconsumer.c",
+                "test/test.c",
+                "test/assertions.c"
+            ]
+        },
+        {
+            "name": "libbeaufort",
+            "path": "CBench/libbeaufort",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "libfor",
+            "path": "CBench/libfor",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "libm17",
+            "path": "CBench/libm17",
+            "tests": [
+                "unit_tests/unit_tests.c"
+            ]
+        },
+        {
+            "name": "libpgn",
+            "path": "CBench/libpgn",
+            "tests": [
+                "tests/coordinate.c",
+                "tests/annotation.c",
+                "tests/pgn.c",
+                "tests/metadata.c",
+                "tests/score.c",
+                "tests/moves.c",
+                "tests/comments.c"
+            ]
+        },
+        {
+            "name": "libpsbt",
+            "path": "CBench/libpsbt",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "libqueue",
+            "path": "CBench/libqueue",
+            "tests": [
+                "test/example.c",
+                "test/test.c"
             ]
         },
         {
             "name": "libtinyfseq",
             "path": "CBench/libtinyfseq",
             "tests": [
-                "CBench/libtinyfseq/test/TFError_string.c",
-                "CBench/libtinyfseq/test/build.c",
-                "CBench/libtinyfseq/test/fuzz/TFChannelRange_read.c",
-                "CBench/libtinyfseq/test/fuzz/TFCompressionBlock_read.c",
-                "CBench/libtinyfseq/test/fuzz/TFHeader_read.c",
-                "CBench/libtinyfseq/test/fuzz/TFVarHeader_read.c"
+                "test/TFError_string.c",
+                "test/build.c",
+                "test/fuzz/TFChannelRange_read.c",
+                "test/fuzz/TFVarHeader_read.c",
+                "test/fuzz/TFHeader_read.c",
+                "test/fuzz/TFCompressionBlock_read.c"
             ]
         },
         {
-            "name": "Simple-Sparsehash",
-            "path": "CBench/Simple-Sparsehash",
-            "tests": ["CBench/Simple-Sparsehash/src/test.c"]
-        },
-        {
-            "name": "Graph-recogniser",
-            "path": "CBench/Graph-recogniser",
+            "name": "libutf",
+            "path": "CBench/libutf",
             "tests": [
-                "CBench/Graph-recogniser/tests/test-cuckoohash.c",
-                "CBench/Graph-recogniser/tests/test-openhash.c",
-                "CBench/Graph-recogniser/tests/test-unit.c"
+                "test/utf8/string-append.c",
+                "test/utf8/string-replace.c",
+                "test/utf16/validate.c",
+                "test/utf8/validate.c",
+                "test/utf8/string-prepend.c",
+                "test/utf8/utf16-convert.c",
+                "test/utf8/utf16-length.c",
+                "test/utf8/string-substring.c",
+                "test/utf16/utf8-convert.c",
+                "test/utf8/validate-invalid.c",
+                "test/utf16/validate-invalid.c",
+                "test/utf16/utf8-length.c"
             ]
         },
         {
-            "name": "2DPartInt",
-            "path": "CBench/2DPartInt",
-            "tests": ["CBench/2DPartInt/test/functions_spec.c"]
-        },
-        {
-            "name": "fft",
-            "path": "CBench/fft",
-            "tests": ["CBench/fft/tests/test.c"]
-        },
-        {
-            "name": "Holdem-Odds",
-            "path": "CBench/Holdem-Odds",
+            "name": "libvcd",
+            "path": "CBench/libvcd",
             "tests": [
-                "CBench/Holdem-Odds/src/tests/all_tests.c",
-                "CBench/Holdem-Odds/src/tests/test_bucket.c",
-                "CBench/Holdem-Odds/src/tests/test_cards.c",
-                "CBench/Holdem-Odds/src/tests/test_deck.c",
-                "CBench/Holdem-Odds/src/tests/test_hands.c"
+                "test/test.c"
             ]
         },
         {
-            "name": "libpsbt",
-            "path": "CBench/libpsbt",
-            "tests": ["CBench/libpsbt/test.c"]
-        },
-        {
-            "name": "file2str",
-            "path": "CBench/file2str",
+            "name": "libwecan",
+            "path": "CBench/libwecan",
             "tests": [
-                "CBench/file2str/tests/CuTest.c",
-                "CBench/file2str/tests/test_file2str.c"
+                "tests/src/tests.c"
             ]
         },
-        { "name": "Phills_DHT", "path": "CBench/Phills_DHT", "tests": [] },
         {
-            "name": "SimpleXML",
-            "path": "CBench/SimpleXML",
-            "tests": ["CBench/SimpleXML/test.c"]
-        },
-        {
-            "name": "VaultSync",
-            "path": "CBench/VaultSync",
+            "name": "Linear-Algebra-C",
+            "path": "CBench/Linear-Algebra-C",
             "tests": [
-                "CBench/VaultSync/test/main_test.c",
-                "CBench/VaultSync/test/unity/unity.c",
-                "CBench/VaultSync/test/vm/repository_test.c"
+                "test.c"
             ]
         },
         {
             "name": "ljmm",
             "path": "CBench/ljmm",
             "tests": [
-                "CBench/ljmm/test/test_001.c",
-                "CBench/ljmm/test/test_002.c"
+                "test/test_002.c",
+                "test/test_001.c"
             ]
         },
         {
-            "name": "merkle-tree-c",
-            "path": "CBench/merkle-tree-c",
-            "tests": ["CBench/merkle-tree-c/test_merkle_tree.c"]
-        },
-        {
-            "name": "lambda-calculus-eval",
-            "path": "CBench/lambda-calculus-eval",
+            "name": "LTRE",
+            "path": "CBench/LTRE",
             "tests": [
-                "CBench/lambda-calculus-eval/tests/test_common.c",
-                "CBench/lambda-calculus-eval/tests/test_config.c",
-                "CBench/lambda-calculus-eval/tests/test_io.c",
-                "CBench/lambda-calculus-eval/tests/test_parser.c",
-                "CBench/lambda-calculus-eval/tests/test_reducer.c",
-                "CBench/lambda-calculus-eval/tests/test_typechecker.c",
-                "CBench/lambda-calculus-eval/tests/tests.c"
+                "test.c"
             ]
         },
         {
-            "name": "totp",
-            "path": "CBench/totp",
-            "tests": ["CBench/totp/test.c"]
-        },
-        {
-            "name": "mvptree",
-            "path": "CBench/mvptree",
-            "tests": ["CBench/mvptree/testmvp.c", "CBench/mvptree/testmvp2.c"]
-        },
-        {
-            "name": "libfor",
-            "path": "CBench/libfor",
-            "tests": ["CBench/libfor/test.c"]
-        },
-        {
-            "name": "dict",
-            "path": "CBench/dict",
+            "name": "Math-Library-in-C",
+            "path": "CBench/Math-Library-in-C",
             "tests": [
-                "CBench/dict/tests/test0.c",
-                "CBench/dict/tests/test1.c",
-                "CBench/dict/tests/test2.c",
-                "CBench/dict/tests/test3.c",
-                "CBench/dict/tests/test4.c",
-                "CBench/dict/tests/test5.c"
+                "test/tests.c"
             ]
         },
         {
             "name": "matrix_multiplication",
             "path": "CBench/matrix_multiplication",
-            "tests": ["CBench/matrix_multiplication/tests/test_matrix.c"]
-        },
-        {
-            "name": "chtrie",
-            "path": "CBench/chtrie",
-            "tests": ["CBench/chtrie/tests/test.c"]
-        },
-        {
-            "name": "gfc",
-            "path": "CBench/gfc",
             "tests": [
-                "CBench/gfc/tests/gfc_bench.c",
-                "CBench/gfc/tests/gfc_test.c"
+                "tests/test_matrix.c"
+            ]
+        },
+        {
+            "name": "mdb",
+            "path": "CBench/mdb",
+            "tests": [
+                "testmdb_int.c",
+                "testmdb.c"
+            ]
+        },
+        {
+            "name": "Megalania",
+            "path": "CBench/Megalania",
+            "tests": [
+                "tests/main.c",
+                "tests/max_heap_test.c",
+                "tests/substring_enumerator_test.c",
+                "tests/packet_slab_undo_stack_test.c"
+            ]
+        },
+        {
+            "name": "merkle-tree-c",
+            "path": "CBench/merkle-tree-c",
+            "tests": [
+                "test_merkle_tree.c"
+            ]
+        },
+        {
+            "name": "morton",
+            "path": "CBench/morton",
+            "tests": [
+                "tests/bench.c",
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "murmurhash_c",
+            "path": "CBench/murmurhash_c",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "mvptree",
+            "path": "CBench/mvptree",
+            "tests": [
+                "testmvp.c",
+                "testmvp2.c"
+            ]
+        },
+        {
+            "name": "NandC",
+            "path": "CBench/NandC",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "Phills_DHT",
+            "path": "CBench/Phills_DHT",
+            "tests": []
+        },
+        {
+            "name": "quadtree",
+            "path": "CBench/quadtree",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "razz_simulation",
+            "path": "CBench/razz_simulation",
+            "tests": [
+                "card_test.c"
+            ]
+        },
+        {
+            "name": "RBench",
+            "path": "CBench/RBench",
+            "tests": []
+        },
+        {
+            "name": "rbtree-lab",
+            "path": "CBench/rbtree-lab",
+            "tests": [
+                "test/final-test-rbtree.c",
+                "test/test_rbtree_insert.c",
+                "test/test_rbtree_rotate.c",
+                "test/test-rbtree.c"
+            ]
+        },
+        {
+            "name": "recordManager",
+            "path": "CBench/recordManager",
+            "tests": [
+                "test_expr.c",
+                "test_assign3_1.c"
+            ]
+        },
+        {
+            "name": "rect_pack_h",
+            "path": "CBench/rect_pack_h",
+            "tests": [
+                "test/test.c"
+            ]
+        },
+        {
+            "name": "Remimu",
+            "path": "CBench/Remimu",
+            "tests": [
+                "my_regex_test.c"
+            ]
+        },
+        {
+            "name": "rhbloom",
+            "path": "CBench/rhbloom",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "roaring-bitmap",
+            "path": "CBench/roaring-bitmap",
+            "tests": [
+                "tests.c"
+            ]
+        },
+        {
+            "name": "rubiksolver",
+            "path": "CBench/rubiksolver",
+            "tests": [
+                "heap/heap_tests.c",
+                "hash/hash_tests.c",
+                "rubik_model_tests.c"
+            ]
+        },
+        {
+            "name": "satc",
+            "path": "CBench/satc",
+            "tests": [
+                "satc-test.c"
+            ]
+        },
+        {
+            "name": "Simple-Config",
+            "path": "CBench/Simple-Config",
+            "tests": [
+                "test/test.c",
+                "test/test_print.c",
+                "test/test_parse.c",
+                "test/test_load.c",
+                "test/utils.c",
+                "test/test_get.c"
+            ]
+        },
+        {
+            "name": "Simple-Sparsehash",
+            "path": "CBench/Simple-Sparsehash",
+            "tests": [
+                "src/test.c"
+            ]
+        },
+        {
+            "name": "SimpleXML",
+            "path": "CBench/SimpleXML",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "simple_lang",
+            "path": "CBench/simple_lang",
+            "tests": [
+                "tests/test_compiler.c",
+                "Tests/test_parser.c",
+                "tests/test_lexer.c",
+                "Tests/test_compiler.c",
+                "Tests/test_lexer.c",
+                "tests/test_parser.c"
+            ]
+        },
+        {
+            "name": "SlothLang",
+            "path": "CBench/SlothLang",
+            "tests": [
+                "tests.c"
+            ]
+        },
+        {
+            "name": "ted",
+            "path": "CBench/ted",
+            "tests": [
+                "tests/runtests.c"
+            ]
+        },
+        {
+            "name": "tisp",
+            "path": "CBench/tisp",
+            "tests": [
+                "test.c"
+            ]
+        },
+        {
+            "name": "totp",
+            "path": "CBench/totp",
+            "tests": [
+                "test.c"
             ]
         },
         {
             "name": "ulidgen",
             "path": "CBench/ulidgen",
-            "tests": ["CBench/ulidgen/tests/test.c"]
-        },
-        {
-            "name": "lib2bit",
-            "path": "CBench/lib2bit",
-            "tests": ["CBench/lib2bit/test/exampleRead.c"]
-        },
-        {
-            "name": "quadtree",
-            "path": "CBench/quadtree",
-            "tests": ["CBench/quadtree/test.c"]
-        },
-        {
-            "name": "gorilla-paper-encode",
-            "path": "CBench/gorilla-paper-encode",
             "tests": [
-                "CBench/gorilla-paper-encode/custom_tests/test.c",
-                "CBench/gorilla-paper-encode/test.c"
+                "tests/test.c"
             ]
         },
         {
-            "name": "hydra",
-            "path": "CBench/hydra",
-            "tests": ["CBench/hydra/tests/test.c"]
+            "name": "utf8",
+            "path": "CBench/utf8",
+            "tests": [
+                "tests/test.c"
+            ]
         },
         {
-            "name": "bhshell",
-            "path": "CBench/bhshell",
-            "tests": ["CBench/bhshell/tests/test.c"]
+            "name": "VaultSync",
+            "path": "CBench/VaultSync",
+            "tests": [
+                "test/main_test.c",
+                "test/vm/repository_test.c",
+                "test/unity/unity.c"
+            ]
+        },
+        {
+            "name": "vec",
+            "path": "CBench/vec",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "worsp",
+            "path": "CBench/worsp",
+            "tests": [
+                "tests/test.c"
+            ]
+        },
+        {
+            "name": "XOpt",
+            "path": "CBench/XOpt",
+            "tests": [
+                "test/simple-test.c",
+                "test/macro-test.c"
+            ]
         }
     ]
 }
