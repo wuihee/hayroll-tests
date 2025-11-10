@@ -1,0 +1,10 @@
+{
+  "programs": [
+    {
+      "name": "tinyexpr",
+      "path": "test_programs/tinyexpr/",
+      "tests": ["smoke.c"],
+      "compile_flags": ["-DTE_POW_FROM_RIGHT", "-DTE_NAT_LOG"]
+    }
+  ]
+}

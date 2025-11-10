@@ -1,0 +1,45 @@
+{
+  "summary": {},
+  "programs": [
+    {
+      "name": "tinyexpr",
+      "status": "failed",
+      "stage_failed": "c_test",
+      "c_test_results": [
+        {
+          "compile_flag": "-DTE_POW_FROM_RIGHT",
+          "compile_status": "failed",
+          "error_message": "",
+          "test_results": [
+            {
+              "test_file": "smoke.c",
+              "status": "passed",
+              "error_message": ""
+            },
+            {
+              "test_file": "test.c",
+              "status": "failed",
+              "error": "error message"
+            }
+          ]
+        }
+      ],
+      "transpile_status": "passed",
+      "rust_test_results": {
+        "status": "failed",
+        "test_results": [
+          {
+            "compile_flag": "-DTE_POW_FROM_RIGHT",
+            "tests_ran": [
+              {
+                "test_file": "smoke.c",
+                "status": "failed",
+                "error": "error message"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

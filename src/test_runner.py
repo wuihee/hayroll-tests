@@ -31,11 +31,20 @@ def compile_c_program(compile_flag: str, program_path: str) -> CompileResult:
     Returns:
         CompileResult containing the compilation status and any error messages.
     """
+    print(compile_flag)
+    subprocess.run(
+        "make clean",
+        cwd=program_path,
+        capture_output=True,
+        text=True,
+        shell=True,
+    )
     command_result = subprocess.run(
         f"bear -- make {compile_flag}",
         cwd=program_path,
         capture_output=True,
         text=True,
+        shell=True,
     )
     status = Status.PASSED if command_result.returncode == 0 else Status.FAILED
     error = command_result.stderr
@@ -60,6 +69,7 @@ def run_single_test(test_file: str, program_path: str) -> SingleTestResult:
         cwd=program_path,
         capture_output=True,
         text=True,
+        shell=True,
     )
     status = Status.PASSED if command_result.returncode == 0 else Status.FAILED
     error = command_result.stderr
@@ -114,4 +124,5 @@ def run_tests() -> list[TestResults]:
         c_test_results = run_c_tests(program)
         all_results.extend(c_test_results)
 
+    print(all_results)
     return all_results
