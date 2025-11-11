@@ -49,7 +49,7 @@ def compile_c_program(compile_flag: str, program_path: str) -> CompileResult:
     Compile a C program using make with the specified compiler flags.
     """
     run_command("make clean", program_path)
-    status = run_command(f"bear -- make {compile_flag}", program_path)
+    status = run_command(f'bear -- make DEFINES="{compile_flag}"', program_path)
     return CompileResult(
         status=status,
         compile_flag=compile_flag,
