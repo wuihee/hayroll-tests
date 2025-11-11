@@ -5,26 +5,14 @@ It builds, transpiles, and tests C programs from the CRUST benchmark, summarizin
 
 The current results of the benchmark can be viewed at [`test_results.json`](test_results.json).
 
-## Prerequisites
-
-Requires `CBench` directory from the CRUST benchmark to be copied into this repository.
-
-Other dependencies include: `python3`, `bear`, `make`, `gcc`, `cargo`, `c2rust`.
-
 ## Usage
 
-To transpile all C programs and run their tests:
+## Evaluation
 
-```sh
-python3 scripts/run_tests.py
-```
+We have curated a dataset of C programs with different compile-time flags to evaluate Hayroll with in `test_programs`.
 
-To generate metadata used to run tests:
+First, we compile and run the C programs on their own test suites with all different compile-flag combinations.
 
-```sh
-python3 scripts/generate_metadata.py
-```
+Next, we transpile the C program to Rust with Hayroll.
 
-## Notes
-
-Currently excluding `skp` program because it always seems to hang.
+Finally, we verify Hayroll's transpilation by compiling, linking and testing the Rust code on the original C test suite for all combinations of compile-time flags.
