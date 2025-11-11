@@ -100,16 +100,20 @@ def run_c_tests(program: ProgramMetadata) -> list[TestResults]:
     return c_test_results
 
 
-def run_transpile(program_path: str) -> Status:
+def run_transpile(program: ProgramMetadata, hayroll_path: str) -> Status:
     """
     Transpile a C program to Rust.
     """
-    # Compile again with no compile-time flags and generated a fresh
+    # Compile again with all compile-time flags and generated a fresh
     # compile_commands.json.
-    compile_c_program("", program_path)
+    all_flags = " ".join(program.compile_flags)
+    compile_c_program(all_flags, program.path)
+
+    output_dir = (Path(program.path) / "hayroll-out").mkdir(exist_ok=True)
+
     return run_command(
-        "c2rust transpile --emit-build-files compile_commands.json",
-        program_path,
+        f"{hayroll_path} compile_commands.json {output_dir}",
+        program.path,
     )
 
 
@@ -126,7 +130,7 @@ def run_tests() -> list[ProgramResults]:
             test_result.status.passed for test_result in c_test_results
         )
 
-        transpile_results = run_transpile(program.path)
+        transpile_results = run_transpile(program, "")
 
         program_status = Status(passed=is_c_test_passed and transpile_results.passed)
         program_results.append(
