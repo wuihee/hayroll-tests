@@ -6,7 +6,6 @@ their execution results, and associated metadata throughout the testing pipeline
 """
 
 from dataclasses import dataclass
-from enum import Enum
 
 
 @dataclass
@@ -21,13 +20,11 @@ class ProgramMetadata:
     compile_flags: list[str]
 
 
-class Status(Enum):
-    """
-    Represents the pass/fail status of a test or compilation.
-    """
-
-    PASSED = 1
-    FAILED = 2
+@dataclass
+class Status:
+    passed: bool
+    stdout: str = ""
+    stderr: str = ""
 
 
 @dataclass
@@ -37,7 +34,6 @@ class CompileResult:
     """
 
     status: Status
-    error: str
     compile_flag: str
 
 
@@ -48,7 +44,6 @@ class SingleTestResult:
     """
 
     status: Status
-    error: str
     test_file: str
 
 
@@ -64,16 +59,6 @@ class TestResults:
 
 
 @dataclass
-class TranspileResults:
-    """
-    Results for transpiling a C program to Rust.
-    """
-
-    status: Status
-    error: str
-
-
-@dataclass
 class ProgramResults:
     """
     Complete test results for a program through all pipeline stages.
@@ -84,6 +69,6 @@ class ProgramResults:
 
     name: str
     status: Status
-    c_test_results: TestResults
-    transpile_results: TranspileResults
+    c_test_results: list[TestResults]
+    transpile_results: Status
     # rust_test_results: list[TestResults]

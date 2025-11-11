@@ -12,6 +12,7 @@ from pathlib import Path
 from .models import (
     CompileResult,
     ProgramMetadata,
+    ProgramResults,
     SingleTestResult,
     Status,
     TestResults,
@@ -19,74 +20,58 @@ from .models import (
 from .preprocessing import get_compile_flag_combinations, get_test_programs
 
 
+def run_command(command: str, program_path: str) -> Status:
+    """
+    Helper method for running a command.
+    """
+    try:
+        command_result = subprocess.run(
+            command,
+            cwd=program_path,
+            capture_output=True,
+            text=True,
+            shell=True,
+        )
+        passed = command_result.returncode == 0
+        return Status(
+            passed=passed,
+            stdout=command_result.stdout,
+            stderr=command_result.stderr,
+        )
+    except subprocess.TimeoutExpired:
+        return Status(passed=False, stderr="Command timed out")
+    except Exception as e:
+        return Status(passed=False, stderr=f"Command failed: {str(e)}")
+
+
 def compile_c_program(compile_flag: str, program_path: str) -> CompileResult:
     """
     Compile a C program using make with the specified compiler flags.
-
-    Args:
-        compile_flag: Compiler flag combination to use (e.g., "-O2 -Wall").
-                      Can be empty string for default compilation.
-        program_path: Path to the directory containing the program's Makefile.
-
-    Returns:
-        CompileResult containing the compilation status and any error messages.
     """
-    print(compile_flag)
-    subprocess.run(
-        "make clean",
-        cwd=program_path,
-        capture_output=True,
-        text=True,
-        shell=True,
+    run_command("make clean", program_path)
+    status = run_command(f"bear -- make {compile_flag}", program_path)
+    return CompileResult(
+        status=status,
+        compile_flag=compile_flag,
     )
-    command_result = subprocess.run(
-        f"bear -- make {compile_flag}",
-        cwd=program_path,
-        capture_output=True,
-        text=True,
-        shell=True,
-    )
-    status = Status.PASSED if command_result.returncode == 0 else Status.FAILED
-    error = command_result.stderr
-    return CompileResult(compile_flag=compile_flag, status=status, error=error)
 
 
 def run_single_test(test_file: str, program_path: str) -> SingleTestResult:
     """
     Execute a single test executable and capture its results.
-
-    Args:
-        test_file: Name of the test executable to run.
-        program_path: Path to the directory containing the test executable.
-
-    Returns:
-        SingleTestResult containing the test status and any error output.
     """
     test_file_path = Path(test_file)
     test_name = test_file_path.stem
-    command_result = subprocess.run(
-        [f"./{test_name}"],
-        cwd=program_path,
-        capture_output=True,
-        text=True,
-        shell=True,
+    status = run_command(f"./{test_name}", program_path)
+    return SingleTestResult(
+        status=status,
+        test_file=test_file,
     )
-    status = Status.PASSED if command_result.returncode == 0 else Status.FAILED
-    error = command_result.stderr
-    return SingleTestResult(test_file=test_file, status=status, error=error)
 
 
 def run_c_tests(program: ProgramMetadata) -> list[TestResults]:
     """
     Compile and run tests for a C program for each compile-flag combination.
-
-    Args:
-        program: Metadata for the program to test, including compile flags
-                and test executables.
-
-    Returns:
-        List of TestResults, one for each compile flag combination.
-        Test results will be empty if compilation failed for that combination.
     """
     c_test_results = []
     compile_flag_combinations = get_compile_flag_combinations(program.compile_flags)
@@ -95,13 +80,18 @@ def run_c_tests(program: ProgramMetadata) -> list[TestResults]:
         compile_result = compile_c_program(compile_flag, program.path)
 
         test_results = []
-        if compile_result.status == Status.PASSED:
+        if compile_result.status.passed:
             for test_file in program.tests:
                 test_result = run_single_test(test_file, program.path)
                 test_results.append(test_result)
 
+        test_status = all(test_result.status.passed for test_result in test_results)
+        is_tests_passed = compile_result.status.passed and test_status
+        c_test_status = Status(passed=compile_result.status.passed and is_tests_passed)
+
         c_test_results.append(
             TestResults(
+                status=c_test_status,
                 compile_result=compile_result,
                 test_results=test_results,
             )
@@ -110,19 +100,42 @@ def run_c_tests(program: ProgramMetadata) -> list[TestResults]:
     return c_test_results
 
 
-def run_tests() -> list[TestResults]:
+def run_transpile(program_path: str) -> Status:
     """
-    Run C tests for all test programs.
+    Transpile a C program to Rust.
+    """
+    # Compile again with no compile-time flags and generated a fresh
+    # compile_commands.json.
+    compile_c_program("", program_path)
+    return run_command(
+        "c2rust transpile --emit-build-files compile_commands.json",
+        program_path,
+    )
 
-    Returns:
-        A list of test results for each program's compile flag combinations.
+
+def run_tests() -> list[ProgramResults]:
+    """
+    Run the entire C2Rust evaluation on all test programs.
     """
     test_programs = get_test_programs()
-    all_results = []
+    program_results = []
 
     for program in test_programs:
         c_test_results = run_c_tests(program)
-        all_results.extend(c_test_results)
+        is_c_test_passed = all(
+            test_result.status.passed for test_result in c_test_results
+        )
 
-    print(all_results)
-    return all_results
+        transpile_results = run_transpile(program.path)
+
+        program_status = Status(passed=is_c_test_passed and transpile_results.passed)
+        program_results.append(
+            ProgramResults(
+                name=program.name,
+                status=program_status,
+                c_test_results=c_test_results,
+                transpile_results=transpile_results,
+            )
+        )
+
+    return program_results
