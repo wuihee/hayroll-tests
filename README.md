@@ -7,6 +7,10 @@ The current results of the benchmark can be viewed at [`test_results.json`](test
 
 ## Usage
 
+```sh
+python3 main.py
+```
+
 ## Evaluation
 
 We have curated a dataset of C programs with different compile-time flags to evaluate Hayroll with in `test_programs`.
