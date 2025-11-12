@@ -104,20 +104,99 @@ def run_transpile(program: ProgramMetadata, hayroll_path: str) -> Status:
     """
     Transpile a C program to Rust.
     """
-    # Compile again with all compile-time flags and generated a fresh
-    # compile_commands.json.
+    # Compile with all compile-time flags and generated a fresh
+    # `compile_commands.json`.
     all_flags = " ".join(program.compile_flags)
     compile_c_program(all_flags, program.path)
 
-    output_dir = (Path(program.path) / "hayroll-out").mkdir(exist_ok=True)
-
     return run_command(
-        f"{hayroll_path} compile_commands.json {output_dir}",
+        f"{hayroll_path} compile_commands.json hayroll-out",
         program.path,
     )
 
 
-def run_tests() -> list[ProgramResults]:
+def compile_rust_program(compile_flag: str, program_path: str) -> Status:
+    """
+    Compile the transpiled Rust program using Cargo with specific features.
+    """
+    features = [
+        flag.replace("-D", "") for flag in compile_flag.split() if flag.startswith("-D")
+    ]
+    if features:
+        features_str = ",".join(features)
+        cargo_command = f"cargo build --release --features {features_str}"
+    else:
+        cargo_command = "cargo build --release"
+
+    return run_command(cargo_command, program_path)
+
+
+def link_and_run_rust_test(test_file: str, program_path: str) -> SingleTestResult:
+    """
+    Link a C test file against the transpiled Rust library and run the test.
+    """
+    test_file_path = Path(test_file)
+    test_name = test_file_path.stem
+    rust_test_name = f"rust_{test_name}"
+
+    link_command = (
+        f"gcc -o {rust_test_name} {test_file} -Isrc "
+        f"-Ltarget/release -lc2rust_out -ldl -lpthread -lm"
+    )
+    link_status = run_command(link_command, program_path)
+
+    if not link_status.passed:
+        return SingleTestResult(
+            status=Status(
+                passed=False,
+                stdout=link_status.stdout,
+                stderr=f"Link failed: {link_status.stderr}",
+            ),
+            test_file=test_file,
+        )
+
+    test_status = run_command(f"./{rust_test_name}", program_path)
+
+    return SingleTestResult(
+        status=test_status,
+        test_file=test_file,
+    )
+
+
+def run_rust_tests(program: ProgramMetadata) -> list[TestResults]:
+    """
+    Compile and run tests for the transpiled Rust program for each compile-flag combination.
+    """
+    rust_test_results = []
+    compile_flag_combinations = get_compile_flag_combinations(program.compile_flags)
+
+    for compile_flag in compile_flag_combinations:
+        compile_result = CompileResult(
+            status=compile_rust_program(compile_flag, program.path),
+            compile_flag=compile_flag,
+        )
+
+        test_results = []
+        if compile_result.status.passed:
+            for test_file in program.tests:
+                test_result = link_and_run_rust_test(test_file, program.path)
+                test_results.append(test_result)
+
+        test_status = all(test_result.status.passed for test_result in test_results)
+        overall_status = Status(passed=compile_result.status.passed and test_status)
+
+        rust_test_results.append(
+            TestResults(
+                status=overall_status,
+                compile_result=compile_result,
+                test_results=test_results,
+            )
+        )
+
+    return rust_test_results
+
+
+def run_tests(hayroll_path: str) -> list[ProgramResults]:
     """
     Run the entire C2Rust evaluation on all test programs.
     """
@@ -130,7 +209,10 @@ def run_tests() -> list[ProgramResults]:
             test_result.status.passed for test_result in c_test_results
         )
 
-        transpile_results = run_transpile(program, "")
+        transpile_results = run_transpile(program, hayroll_path)
+        print(transpile_results)
+
+        rust_test_results = run_rust_tests(program)
 
         program_status = Status(passed=is_c_test_passed and transpile_results.passed)
         program_results.append(
@@ -139,6 +221,7 @@ def run_tests() -> list[ProgramResults]:
                 status=program_status,
                 c_test_results=c_test_results,
                 transpile_results=transpile_results,
+                rust_test_results=rust_test_results,
             )
         )
 

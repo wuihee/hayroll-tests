@@ -71,4 +71,4 @@ class ProgramResults:
     status: Status
     c_test_results: list[TestResults]
     transpile_results: Status
-    # rust_test_results: list[TestResults]
+    rust_test_results: list[TestResults]
